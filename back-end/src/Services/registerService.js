@@ -23,4 +23,5 @@ const registerService = async (name, email, password, role = 'customer') => {
 
   return { code: 201, result };
 };
+
 module.exports = { registerService };
