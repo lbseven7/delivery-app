@@ -1,9 +1,9 @@
 const md5 = require('md5');
 const { createToken } = require('../helpers/tokenHelper');
-const { user } = require('../database/models');
+const { User } = require('../database/models');
 
 const loginService = async (email, password) => {
-  const checkedUser = await user.findOne({ where: { email } });
+  const checkedUser = await User.findOne({ where: { email } });
   if (!checkedUser) {
     return { code: 404, message: 'User not found' };
   }
