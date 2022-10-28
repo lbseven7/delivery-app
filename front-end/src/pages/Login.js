@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { requestLogin } from '../Services/requests';
 // import DeliveryContext from '../context/deliveryContext';
 
 function Login() {
@@ -6,6 +7,7 @@ function Login() {
     email: '',
     password: '',
   });
+  const [failedTryLogin, setFailedTryLogin] = useState(false);
 
   const handleChange = ({ target: { value, name } }) => {
     setLoginData((prevState) => ({
@@ -15,11 +17,24 @@ function Login() {
   };
 
   const loginRequeriments = () => {
-    console.log('loginRequeriments');
     const PASSWORD_LIMIT_SIZE = 6;
     const emailRegex = /\S+@\S+\.\S+/i;
     return emailRegex.test(loginData.email) && loginData.password
       && loginData.password.length >= PASSWORD_LIMIT_SIZE;
+  };
+
+  const messageError = '404 - Not found';
+
+  const login = async () => {
+    // event.preventDefault();
+    const { email, password } = loginData;
+
+    try {
+      await requestLogin('/login', { email, password });
+      console.log('ok');
+    } catch (error) {
+      setFailedTryLogin(true);
+    }
   };
 
   return (
@@ -48,6 +63,7 @@ function Login() {
             name="button"
             data-testid="common_login__button-login"
             disabled={ !loginRequeriments() }
+            onClick={ () => login() }
           >
             LOGIN
           </button>
@@ -61,6 +77,17 @@ function Login() {
           </button>
         </label>
       </form>
+      {
+        (failedTryLogin)
+          ? (
+            <p data-testid="common_login__element-invalid-email">
+              {
+                messageError
+              }
+            </p>
+          )
+          : null
+      }
     </div>
   );
 }
