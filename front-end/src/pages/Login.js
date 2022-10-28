@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { requestLogin } from '../Services/requests';
+import { useNavigate } from 'react-router-dom';
+import requestLogin from '../Services/requests';
 // import DeliveryContext from '../context/deliveryContext';
 
 function Login() {
@@ -8,6 +9,7 @@ function Login() {
     password: '',
   });
   const [failedTryLogin, setFailedTryLogin] = useState(false);
+  const history = useNavigate();
 
   const handleChange = ({ target: { value, name } }) => {
     setLoginData((prevState) => ({
@@ -26,12 +28,16 @@ function Login() {
   const messageError = '404 - Not found';
 
   const login = async () => {
-    // event.preventDefault();
     const { email, password } = loginData;
 
     try {
-      await requestLogin('/login', { email, password });
-      console.log('ok');
+      const response = await requestLogin('http://localhost:3001/login', { email, password });
+
+      if (response.data.token) {
+        history('/customer/products');
+      }
+
+      return response;
     } catch (error) {
       setFailedTryLogin(true);
     }

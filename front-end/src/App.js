@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <Navigate to="/login" replace /> } />
           <Route exact path="/login" element={ <Login /> } />
+          <Route exact path="/customer/products" element={ <Login /> } />
         </Routes>
       </ContextProvider>
     </div>

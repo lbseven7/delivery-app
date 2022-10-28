@@ -9,8 +9,6 @@ function ContextProvider({ children }) {
     password: '',
   });
 
-  // const history = useHistory();
-  // const path = history.location.pathname;
   const contextValue = useMemo(() => ({
     loginData,
     setLoginData,
