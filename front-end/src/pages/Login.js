@@ -1,8 +1,11 @@
-import React, { useContext } from 'react';
-import DeliveryContext from '../context/deliveryContext';
+import React, { useState } from 'react';
+// import DeliveryContext from '../context/deliveryContext';
 
 function Login() {
-  const { loginData, setLoginData } = useContext(DeliveryContext);
+  const [loginData, setLoginData] = useState({
+    email: '',
+    password: '',
+  });
 
   const handleChange = ({ target: { value, name } }) => {
     setLoginData((prevState) => ({
@@ -11,11 +14,12 @@ function Login() {
     }));
   };
 
-  const loginRequiriments = () => {
-    const PASSWORD_LIMIT_SIZE = 12;
+  const loginRequeriments = () => {
+    console.log('loginRequeriments');
+    const PASSWORD_LIMIT_SIZE = 6;
     const emailRegex = /\S+@\S+\.\S+/i;
-    return emailRegex.test(loginData.email) && password && password.length
-      > PASSWORD_LIMIT_SIZE;
+    return emailRegex.test(loginData.email) && loginData.password
+      && loginData.password.length >= PASSWORD_LIMIT_SIZE;
   };
 
   return (
@@ -43,7 +47,7 @@ function Login() {
             type="button"
             name="button"
             data-testid="common_login__button-login"
-            disabled={ !loginRequiriments }
+            disabled={ !loginRequeriments() }
           >
             LOGIN
           </button>
@@ -51,7 +55,7 @@ function Login() {
             type="button"
             name="button"
             data-testid="common_login__button-register"
-            disabled={ !loginRequiriments }
+            disabled={ !loginRequeriments() }
           >
             Ainda não tenho conta
           </button>

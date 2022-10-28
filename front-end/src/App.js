@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 
 import ContextProvider from './context/ContextProvider';
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <ContextProvider>
         <Routes>
-          <Route exact path="/" element={ <Login /> } />
+          <Route path="/" element={ <Navigate to="/login" replace /> } />
           <Route exact path="/login" element={ <Login /> } />
         </Routes>
       </ContextProvider>
