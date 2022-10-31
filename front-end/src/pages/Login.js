@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import requestLoginRegister from '../Services/requests';
+import DeliveryContext from '../context/deliveryContext';
 
 function Login() {
   const [loginData, setLoginData] = useState({
@@ -9,6 +10,8 @@ function Login() {
   });
   const [failedTryLogin, setFailedTryLogin] = useState(false);
   const history = useNavigate();
+
+  const { setUserInfo } = useContext(DeliveryContext);
 
   const handleChange = ({ target: { value, name } }) => {
     setLoginData((prevState) => ({
@@ -33,10 +36,9 @@ function Login() {
       const response = await requestLoginRegister('/login', { email, password });
 
       if (response.data.token) {
+        setUserInfo(response.data);
         history('/customer/products');
       }
-
-      return response;
     } catch (error) {
       setFailedTryLogin(true);
     }
@@ -87,9 +89,7 @@ function Login() {
         (failedTryLogin)
           ? (
             <p data-testid="common_login__element-invalid-email">
-              {
-                messageError
-              }
+              { messageError }
             </p>
           )
           : null
