@@ -19,7 +19,7 @@ function ContextProvider({ children }) {
     setLoginData,
     registerData,
     setRegisterData,
-  }), []);
+  }), [loginData, registerData]);
 
   return (
     <DeliveryContext.Provider value={ contextValue }>
