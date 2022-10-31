@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import requestLogin from '../Services/requests';
-// import DeliveryContext from '../context/deliveryContext';
+import requestLoginRegister from '../Services/requests';
 
 function Login() {
   const [loginData, setLoginData] = useState({
@@ -25,13 +24,13 @@ function Login() {
       && loginData.password.length >= PASSWORD_LIMIT_SIZE;
   };
 
-  const messageError = '404 - Not found';
+  const messageError = 'Usuário Inexistente!';
 
   const login = async () => {
     const { email, password } = loginData;
 
     try {
-      const response = await requestLogin('http://localhost:3001/login', { email, password });
+      const response = await requestLoginRegister('/login', { email, password });
 
       if (response.data.token) {
         history('/customer/products');
@@ -47,7 +46,7 @@ function Login() {
     <div className="data-login-form-container">
       <form>
         <label className="login-label" htmlFor="email-input">
-          <span>Login:</span>
+          <span>Login</span>
           <input
             type="email"
             name="email"
@@ -56,6 +55,7 @@ function Login() {
             data-testid="common_login__input-email"
             onChange={ (event) => handleChange(event) }
           />
+          <span>Senha</span>
           <input
             type="password"
             name="password"
@@ -77,7 +77,7 @@ function Login() {
             type="button"
             name="button"
             data-testid="common_login__button-register"
-            disabled={ !loginRequeriments() }
+            onClick={ () => history('/register') }
           >
             Ainda não tenho conta
           </button>
