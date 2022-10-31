@@ -21,7 +21,6 @@ const registerService = async (name, email, password, role = 'customer') => {
   const token = createToken({ id: result.id, email: result.email });
 
   const userInfo = { ...result.dataValues, token };
-
   return { code: 201, userInfo };
 };
 
