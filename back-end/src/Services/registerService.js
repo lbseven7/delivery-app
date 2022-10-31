@@ -1,16 +1,11 @@
 const md5 = require('md5');
-const { createToken } = require('../helpers/tokenHelper');
 const { Op } = require('sequelize');
+const { createToken } = require('../helpers/tokenHelper');
 const { User } = require('../database/models');
 
 const registerService = async (name, email, password, role = 'customer') => {
   const findUser = await User.findOne({
-    where: {
-      [Op.or]: [
-        { name },
-        { email },
-      ],
-    },
+    where: { [Op.or]: [{ name }, { email }] },
   });
   
   if (findUser) {
