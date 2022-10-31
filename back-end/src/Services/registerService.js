@@ -14,12 +14,9 @@ const registerService = async (name, email, password, role = 'customer') => {
       message: 'User already registered',
     };
   }
-  const pass = md5(password);    
-
+  const pass = md5(password); 
   const result = await User.create({ name, email, password: pass, role });
-
   const token = createToken({ id: result.id, email: result.email });
-
   const userInfo = { ...result.dataValues, token };
   return { code: 201, userInfo };
 };
