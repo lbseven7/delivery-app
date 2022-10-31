@@ -8,10 +8,17 @@ function ContextProvider({ children }) {
     email: '',
     password: '',
   });
+  const [registerData, setRegisterData] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
 
   const contextValue = useMemo(() => ({
     loginData,
     setLoginData,
+    registerData,
+    setRegisterData,
   }), []);
 
   return (

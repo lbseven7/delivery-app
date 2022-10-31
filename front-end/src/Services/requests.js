@@ -1,17 +1,15 @@
 import axios from 'axios';
 
-// const api = axios.create({
-//   baseURL: `http://localhost:${process.env.REACT_APP_API_PORT || '3001'}`,
-// });
+// require('dotenv/config');
 
-// export const requestData = async (endpoint) => {
-//   const { data } = await api.get(endpoint);
-//   return data;
-// };
+// const { API_PORT } = process.env;
 
-const requestLogin = async (endpoint, body) => {
-  const dataLogin = await axios.post(endpoint, body);
+const url = (route) => `http://localhost:3001${route}`;
+
+const requestLoginRegister = async (endpoint, body) => {
+  const routeUrl = url(endpoint);
+  const dataLogin = await axios.post(routeUrl, body);
   return dataLogin;
 };
 
-export default requestLogin;
+export default requestLoginRegister;
