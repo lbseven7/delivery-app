@@ -13,13 +13,26 @@ function ContextProvider({ children }) {
     email: '',
     password: '',
   });
-
+  const [userInfo, setUserInfo] = useState({
+    name: '',
+    email: '',
+    role: '',
+    token: '',
+  });
+  const [products, setProducts] = useState([]);
+  const [total, setTotal] = useState(0);
   const contextValue = useMemo(() => ({
     loginData,
     setLoginData,
     registerData,
     setRegisterData,
-  }), [loginData, registerData]);
+    userInfo,
+    setUserInfo,
+    products,
+    setProducts,
+    total,
+    setTotal,
+  }), [loginData, registerData, userInfo, products, total]);
 
   return (
     <DeliveryContext.Provider value={ contextValue }>

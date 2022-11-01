@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import requestLoginRegister from '../Services/requests';
+import DeliveryContext from '../context/deliveryContext';
 
 function Login() {
   const [loginData, setLoginData] = useState({
@@ -9,6 +10,10 @@ function Login() {
   });
   const [failedTryLogin, setFailedTryLogin] = useState(false);
   const history = useNavigate();
+
+  const { setUserInfo } = useContext(DeliveryContext);
+
+  // const { userInfo } = useContext(DeliveryContext);
 
   const handleChange = ({ target: { value, name } }) => {
     setLoginData((prevState) => ({
@@ -30,14 +35,21 @@ function Login() {
     const { email, password } = loginData;
 
     try {
-      const response = await requestLoginRegister('/login', { email, password });
+      const { data } = await requestLoginRegister('/login', { email, password });
 
-      if (response.data.token) {
+      if (data.token) {
+        const userInfo = {
+          name: data.name,
+          email: data.email,
+          role: data.role,
+          token: data.token,
+        };
+        setUserInfo(userInfo);
+        localStorage.setItem('user', JSON.stringify(userInfo));
         history('/customer/products');
       }
-
-      return response;
     } catch (error) {
+      console.log(error);
       setFailedTryLogin(true);
     }
   };
@@ -87,9 +99,7 @@ function Login() {
         (failedTryLogin)
           ? (
             <p data-testid="common_login__element-invalid-email">
-              {
-                messageError
-              }
+              { messageError }
             </p>
           )
           : null
