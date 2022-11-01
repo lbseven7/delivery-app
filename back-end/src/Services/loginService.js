@@ -18,7 +18,12 @@ const loginService = async (email, password) => {
     id: checkedUser.id,
   });
 
-  return { code: 200, token };
+  const userInfo = { 
+    ...checkedUser.dataValues, 
+    token,
+  }
+
+  return { code: 200, userInfo };
 };
 
 module.exports = { loginService };
