@@ -30,11 +30,12 @@ function CardProducts({ product }) {
     setTotal(sumReduce);
   };
 
-  const totalSumInput = (value) => {
+  const totalSumInput = (value, nameInput) => {
     const sumLocal = JSON.parse(localStorage.getItem('totalPrice'));
-    if (!sumLocal) {
+    if (!sumLocal || nameInput === name) {
       localStorage.setItem('totalPrice', JSON.stringify(Number(price) * Number(value)));
       setTotal(Number(price) * Number(value));
+      return 0;
     }
     const sumTotal = sumLocal + Number(price) * Number(value);
     localStorage.setItem('totalPrice', JSON.stringify(sumTotal));
@@ -80,9 +81,9 @@ function CardProducts({ product }) {
           name={ name }
           type="number"
           value={ productsButton }
-          onChange={ ({ target }) => {
-            setProductsButton(Number(target.value));
-            totalSumInput(target.value);
+          onChange={ ({ target: { value, name: nameInput } }) => {
+            setProductsButton(Number(value));
+            totalSumInput(value, nameInput);
           } }
           data-testid={ `customer_products__input-card-quantity-${id}` }
         />
