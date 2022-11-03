@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
     urlImage: { type: DataTypes.STRING, field: 'url_image'},
   }, {
     timestamps: false,
-    tableName: 'products'
+    tableName: 'products',
+    underscored: true
   });
 
   Product.associate = (models) => {
