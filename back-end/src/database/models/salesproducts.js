@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     quantity: DataTypes.INTEGER,
   }, {
+    underscored: true,
     timestamps: false,
     tableName: 'salesProducts'
   });
@@ -28,6 +29,5 @@ module.exports = (sequelize, DataTypes) => {
       as: 'products'
     });
   }
-
   return saleProduct;
 };
