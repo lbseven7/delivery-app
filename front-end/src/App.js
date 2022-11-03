@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-// import './App.css';
+import './App.css';
 
 import ContextProvider from './context/ContextProvider';
 
