@@ -6,15 +6,16 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true 
     },
     userId: DataTypes.INTEGER,
-    sallerId: DataTypes.INTEGER,
+    sellerId: DataTypes.INTEGER,
     totalPrice: DataTypes.DECIMAL,
     deliveryAdress: DataTypes.STRING,
     deliveryAdress: DataTypes.STRING,
-    saleDate: DataTypes.STRING,
-    status: DataTypes.DATE
+    saleDate: DataTypes.DATE,
+    status: DataTypes.STRING
   }, {
     timestamps: false,
-    tableName: 'sales'
+    tableName: 'sales',
+    underscored: true
   });
 
   Sale.associate = (models) => {

@@ -33,14 +33,20 @@ function Register() {
     const { name, email, password } = registerData;
 
     try {
-      const response = await requestLoginRegister('/register', { name, email, password });
-
-      if (response.data.token) {
+      const { data } = await requestLoginRegister('/register', { name, email, password });
+      console.log(data);
+      if (data.token) {
+        const userInfo = {
+          name: data.name,
+          email: data.email,
+          role: data.role,
+          token: data.token,
+        };
+        localStorage.setItem('user', JSON.stringify(userInfo));
         history('/customer/products');
       }
-
-      return response;
     } catch (error) {
+      console.log(error);
       setFailedTryRegister(true);
     }
   };

@@ -18,9 +18,9 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      sallerId: {
+      sellerId: {
         type: Sequelize.INTEGER,
-        field: 'saller_id',
+        field: 'seller_id',
         references: {
           model: 'users',
           key: 'id',
@@ -50,6 +50,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Sales');
+    await queryInterface.dropTable('sales');
   }
 };
