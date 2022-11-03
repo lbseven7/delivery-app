@@ -21,7 +21,7 @@ const loginService = async (email, password) => {
   const userInfo = { 
     ...checkedUser.dataValues, 
     token,
-  }
+  };
 
   return { code: 200, userInfo };
 };
