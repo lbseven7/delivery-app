@@ -23,13 +23,13 @@ function CardProducts({ product }) {
     }
 
     if (cartItems.some((p) => p.id === prod.id)) {
-      const a = cartItems.map((pdt) => {
+      const updateProd = cartItems.map((pdt) => {
         if (pdt.id === prod.id) {
           return item;
         }
         return pdt;
       });
-      localStorage.setItem('cartItems', JSON.stringify(a));
+      localStorage.setItem('cartItems', JSON.stringify(updateProd));
     } else {
       const addToCart = [...cartItems, { ...item }];
       localStorage.setItem('cartItems', JSON.stringify(addToCart));
