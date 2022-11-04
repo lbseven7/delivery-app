@@ -8,12 +8,6 @@ const requestLoginRegister = async (endpoint, body) => {
   return dataLogin;
 };
 
-// const requestProducts = async (endpoint) => {
-//   const routeUrl = url(endpoint);
-//   const dataLogin = await axios.get(routeUrl);
-//   return dataLogin;
-// };
-
 const requestProducts = async () => {
   try {
     const URL = getUrl('/products');
@@ -31,5 +25,22 @@ const requestProducts = async () => {
   }
 };
 
-export default requestLoginRegister;
-export { requestProducts };
+const createSale = async (body) => {
+  try {
+    const URL = getUrl('/sales');
+    const userInfo = JSON.parse(localStorage.getItem('user'));
+
+    const response = await axios.post(URL, body, {
+      headers: {
+        Authorization: userInfo?.token,
+      },
+    });
+
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error.response;
+  }
+};
+
+export { requestLoginRegister, requestProducts, createSale };
