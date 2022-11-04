@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import DeliveryContext from '../context/deliveryContext';
 
@@ -23,58 +23,57 @@ function CardProducts({ product }) {
     }
 
     if (cartItems.some((p) => p.id === prod.id)) {
-      const a = cartItems.map((pdt) => {
+      const updateProd = cartItems.map((pdt) => {
         if (pdt.id === prod.id) {
           return item;
         }
         return pdt;
       });
-      localStorage.setItem('cartItems', JSON.stringify(a));
+      localStorage.setItem('cartItems', JSON.stringify(updateProd));
     } else {
       const addToCart = [...cartItems, { ...item }];
       localStorage.setItem('cartItems', JSON.stringify(addToCart));
     }
   };
 
-  // essa função faz a soma do total
+  const setTotalLocalStorage = async (totalSum) => {
+    const sumLocal = JSON.parse(localStorage.getItem('totalPrice'));
+    console.log(totalSum);
+    if (!sumLocal) {
+      localStorage.setItem('totalPrice', JSON.stringify(totalSum));
+      setTotal(totalSum);
+    }
+    localStorage.setItem('totalPrice', JSON.stringify(totalSum));
+    setTotal(totalSum);
+  };
+
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem('cartItems'));
     const totalSum = cartItems?.reduce((acc, cur) => {
       const sum = acc + cur.quantity * cur.price;
       return sum;
     }, 0);
-    console.log(totalSum);
+
+    if (totalSum) {
+      setTotalLocalStorage(totalSum);
+    }
   });
 
-  const totalSum = () => {
-    const sumLocal = JSON.parse(localStorage.getItem('totalPrice'));
-    if (!sumLocal) {
-      localStorage.setItem('totalPrice', JSON.stringify(price));
-      setTotal(price);
+  const restoreQuantity = useCallback(() => {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    if (cartItems) {
+      cartItems?.some((p) => {
+        if (p.id === id) {
+          setProductsButton(p.quantity);
+        }
+        return false;
+      });
     }
-    const sum = sumLocal + Number(price);
-    localStorage.setItem('totalPrice', JSON.stringify(sum));
-    setTotal(sum);
-  };
+  }, [id]);
 
-  const totalReducePrice = () => {
-    const sumTotal = JSON.parse(localStorage.getItem('totalPrice'));
-    const sumReduce = sumTotal - Number(price);
-    localStorage.setItem('totalPrice', JSON.stringify(sumReduce));
-    setTotal(sumReduce);
-  };
-
-  const totalSumInput = (value, nameInput) => {
-    const sumLocal = JSON.parse(localStorage.getItem('totalPrice'));
-    if (!sumLocal || nameInput === name) {
-      localStorage.setItem('totalPrice', JSON.stringify(Number(price) * Number(value)));
-      setTotal(Number(price) * Number(value));
-      return 0;
-    }
-    const sumTotal = sumLocal + Number(price) * Number(value);
-    localStorage.setItem('totalPrice', JSON.stringify(sumTotal));
-    setTotal(sumTotal);
-  };
+  useEffect(() => {
+    restoreQuantity();
+  }, [restoreQuantity]);
 
   return (
     <span
@@ -106,7 +105,6 @@ function CardProducts({ product }) {
         onClick={ () => {
           if (productsButton > 0) {
             setProductsButton(productsButton - 1);
-            totalReducePrice();
             sumItems(productsButton - 1, product);
           }
         } }
@@ -118,10 +116,11 @@ function CardProducts({ product }) {
           name={ name }
           type="number"
           value={ productsButton }
-          onChange={ ({ target: { value, name: nameInput } }) => {
-            setProductsButton(Number(value));
-            totalSumInput(value, nameInput);
-            sumItems(value, price);
+          onChange={ ({ target: { value } }) => {
+            if (value >= 0) {
+              setProductsButton(Number(value));
+              sumItems(value, product);
+            }
           } }
           data-testid={ `customer_products__input-card-quantity-${id}` }
         />
@@ -132,7 +131,6 @@ function CardProducts({ product }) {
         data-testid={ `customer_products__button-card-add-item-${id}` }
         onClick={ () => {
           setProductsButton(productsButton + 1);
-          totalSum();
           sumItems(productsButton + 1, product);
         } }
       >
