@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import requestLoginRegister from '../Services/requests';
+import { requestLoginRegister } from '../Services/requests';
 import DeliveryContext from '../context/deliveryContext';
 
 function Login() {
