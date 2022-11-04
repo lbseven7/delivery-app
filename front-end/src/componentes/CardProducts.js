@@ -75,6 +75,7 @@ function CardProducts({ product }) {
     localStorage.setItem('totalPrice', JSON.stringify(sumTotal));
     setTotal(sumTotal);
   };
+
   return (
     <span
       key={ id }

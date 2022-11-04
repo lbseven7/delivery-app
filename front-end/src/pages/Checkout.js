@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../componentes/NavBar';
 import CheckoutProduct from '../componentes/CheckoutProduct';
 
 function Checkout() {
   const [cartCheckout, setCartCheckout] = useState(JSON
-    .parse(localStorage.getItem('cartCheckout')) || []);
+    .parse(localStorage.getItem('cartItems')) || []);
 
-  const totalPrice = cartCheckout
-    .reduce((acc, curr) => Number(acc) + Number(curr.subTotal), 0);
+  const totalPrice = JSON.parse(localStorage.getItem('totalPrice'));
+
+  const history = useNavigate();
 
   return (
     <section>
@@ -19,6 +21,7 @@ function Checkout() {
             { ...item }
             key={ item.id }
             index={ index }
+            totalPrice={ totalPrice }
           />
         ))
       }
@@ -54,6 +57,7 @@ function Checkout() {
       <button
         type="button"
         data-testid="customer_checkout__button-submit-order"
+        onClick={ () => history('/customer/orders/3') }
       >
         FINALIZAR PEDIDO
       </button>
