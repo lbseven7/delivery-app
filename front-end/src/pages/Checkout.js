@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../componentes/NavBar';
+import NavBar from '../componentes/NavBar';
 import CheckoutProduct from '../componentes/CheckoutProduct';
 
 function Checkout() {
@@ -13,7 +13,7 @@ function Checkout() {
 
   return (
     <section>
-      <Navbar />
+      <NavBar />
       {
         cartCheckout.map((item, index) => (
           <CheckoutProduct
