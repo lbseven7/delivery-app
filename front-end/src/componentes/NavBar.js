@@ -10,13 +10,13 @@ function NavBar() {
       <nav className="nav-bar">
         <div className="nav-bar-box">
           <Link
-            to="/customer/products/"
+            to="/customer/products"
             data-testid="customer_products__element-navbar-link-products"
           >
             PRODUTOS
           </Link>
           <Link
-            to="/customer/orders/"
+            to="/customer/orders"
             data-testid="customer_products__element-navbar-link-orders"
           >
             MEUS PEDIDOS

@@ -20,7 +20,8 @@ function App() {
           <Route exact path="/register" element={ <Register /> } />
           <Route exact path="/customer/products" element={ <CustomerProducts /> } />
           <Route exact path="/customer/checkout" element={ <Checkout /> } />
-          <Route exact path="/customer/orders/:id" element={ <Order /> } />
+          <Route exact path="/customer/orders" element={ <Order /> } />
+          {/* <Route exact path="/customer/orders/:id" element={ <Order /> } /> */}
         </Routes>
       </ContextProvider>
     </div>
