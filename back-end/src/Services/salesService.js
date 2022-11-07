@@ -8,6 +8,7 @@ const getUtcDate = () => {
   d.getUTCMinutes(), d.getUTCSeconds(), d.getUTCMilliseconds()));
   return utcDate;
 };
+
 const createSaleService = async (sales, orders) => {
   try {
     const trs = await sequelize.transaction(async (transaction) => {
@@ -19,7 +20,7 @@ const createSaleService = async (sales, orders) => {
         productId,
         quantity,
       }));
-      console.log(dataValues);
+
       await saleProduct.bulkCreate(salesArray, { transaction });
       return dataValues;
     });
@@ -29,4 +30,12 @@ const createSaleService = async (sales, orders) => {
   }
 };
 
-module.exports = { createSaleService };
+const findUserService = async (userId) => {
+  if (!userId) {
+    return { code: 404, message: 'User not found' };
+  }
+  const sales = await Sale.findAll({ where: { userId } });
+  return { code: 200, sales };
+};
+
+module.exports = { createSaleService, findUserService };

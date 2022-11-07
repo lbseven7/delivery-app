@@ -1,19 +1,29 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { requestLoginRegister } from '../Services/requests';
 import DeliveryContext from '../context/deliveryContext';
 
 function Login() {
+  const history = useNavigate();
+
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
   });
   const [failedTryLogin, setFailedTryLogin] = useState(false);
-  const history = useNavigate();
+
+  const loginRedirect = useCallback(() => {
+    const user = localStorage.getItem('user');
+    if (user) {
+      history('/customer/products');
+    }
+  }, [history]);
+
+  useEffect(() => {
+    loginRedirect();
+  }, [loginRedirect]);
 
   const { setUserInfo } = useContext(DeliveryContext);
-
-  // const { userInfo } = useContext(DeliveryContext);
 
   const handleChange = ({ target: { value, name } }) => {
     setLoginData((prevState) => ({

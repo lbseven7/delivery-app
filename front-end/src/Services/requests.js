@@ -43,4 +43,22 @@ const createSale = async (body) => {
   }
 };
 
-export { requestLoginRegister, requestProducts, createSale };
+const findSales = async () => {
+  try {
+    const URL = getUrl('/sales');
+    const userInfo = JSON.parse(localStorage.getItem('user'));
+
+    const response = await axios.get(URL, {
+      headers: {
+        Authorization: userInfo?.token,
+      },
+    });
+
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error.response;
+  }
+};
+
+export { requestLoginRegister, requestProducts, createSale, findSales };
