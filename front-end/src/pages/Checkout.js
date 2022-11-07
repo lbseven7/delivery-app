@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../componentes/NavBar';
 import CheckoutProduct from '../componentes/CheckoutProduct';
 import { createSale } from '../Services/requests';
+import DeliveryContext from '../context/deliveryContext';
 
 function Checkout() {
   const [cartCheckout, setCartCheckout] = useState(JSON
@@ -10,6 +11,8 @@ function Checkout() {
   const [address, setAddress] = useState('');
   const [number, setNumber] = useState('');
   // const [seller, setSeller] = useState('');
+
+  const { setOrders } = useContext(DeliveryContext);
 
   const totalPrice = JSON.parse(localStorage.getItem('totalPrice'));
 
@@ -31,6 +34,8 @@ function Checkout() {
     if (data.message) {
       console.log(data.message);
     }
+    setOrders(data);
+    console.log(data);
     history(`/customer/orders/${data.id}`);
   };
 
