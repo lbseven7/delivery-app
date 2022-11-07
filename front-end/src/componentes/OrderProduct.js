@@ -24,20 +24,12 @@ function OrderProduct({
     history(`/customer/orders/${value}`);
   };
 
-  // const totalOrderPrice = (value) => {
-  //   const result = value.replace(/\./, ',');
-  //   return result;
-  // };
-
   return (
     <div onClick={ () => onClick(orderId) } aria-hidden="true">
       <p
         data-testid={ `customer_orders__element-order-id-${orderId}` }
       >
         { `Pedido: ${order}` }
-        {/* Pedido:
-        {' '}
-        { order } */}
       </p>
       <p
         data-testid={ `customer_orders__element-delivery-status-${orderId}` }

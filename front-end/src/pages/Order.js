@@ -1,41 +1,44 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import NavBar from '../componentes/NavBar';
 import OrderProduct from '../componentes/OrderProduct';
+import { findSales } from '../Services/requests';
 
 function Order() {
-  const [orders, setOrders] = useState([
-    // { orderId: 1, orderStatus: 'Entregue', orderDate: '01/01/2021', orderPrice: 10 },
-    // { orderId: 2, orderStatus: 'Entregue', orderDate: '01/02/2021', orderPrice: 10 },
-    // { orderId: 3, orderStatus: 'Entregue', orderDate: '01/04/2021', orderPrice: 10 },
-  ]);
+  const [sales, setSales] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const userSales = useCallback(async () => {
+    const response = await findSales();
+    console.log(response);
+    setSales(response.data);
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    userSales();
+  }, [userSales]);
 
   return (
     <div>
       <NavBar />
-      <div className="card-orders-container">
-        {
-          orders.map(({ id, userId, orderStatus, orderDate, orderPrice }, index) => (
-            <OrderProduct
-              key={ id }
-              orderId={ id }
-              userId={ userId }
-              order={ `${index + 1}` }
-              orderStatus={ orderStatus }
-              orderDate={ orderDate }
-              orderPrice={ orderPrice }
-            />
-          ))
-        }
-        {/* {
-          orders.map((item, index) => (
-            <OrderProduct
-              { ...item }
-              key={ item.orderId }
-              index={ index }
-            />
-          ))
-        } */}
-      </div>
+      {
+        loading ? <p>Loading...</p> : (
+          <div className="card-orders-container">
+            {
+              sales.map(({ id, status, saleDate, totalPrice }, index) => (
+                <OrderProduct
+                  key={ id }
+                  orderId={ id }
+                  order={ `${index + 1}` }
+                  orderStatus={ status }
+                  orderDate={ saleDate }
+                  orderPrice={ totalPrice }
+                />
+              ))
+            }
+          </div>
+        )
+      }
     </div>
   );
 }

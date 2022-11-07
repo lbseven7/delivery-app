@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const jwtKey = require('fs')
   .readFileSync('jwt.evaluation.key', { encoding: 'utf-8' });
 
-const JWT_CONFIG = { algorithm: 'HS256', expiresIn: '45min' };
+const JWT_CONFIG = { algorithm: 'HS256', expiresIn: '7d' };
 
 const createToken = (payload) => {
   const token = jwt.sign(payload, jwtKey, JWT_CONFIG);

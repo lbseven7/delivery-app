@@ -1,4 +1,4 @@
-const { createSaleService } = require('../Services/salesService');
+const { createSaleService, findUserService } = require('../Services/salesService');
 
 const createSaleController = async (req, res) => {
   const {
@@ -19,4 +19,13 @@ const createSaleController = async (req, res) => {
   return res.status(code).json(data);
 };
 
-module.exports = { createSaleController };
+const findUserController = async (req, res) => {
+  const { userId } = req.body;
+  const { code, message, sales } = await findUserService(userId);
+  if (message) {
+    return res.status(code).json({ message });
+  }
+  return res.status(code).json(sales);
+};
+
+module.exports = { createSaleController, findUserController };
