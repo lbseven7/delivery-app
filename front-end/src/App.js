@@ -8,7 +8,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import CustomerProducts from './pages/CustomerProducts';
 import Checkout from './pages/Checkout';
-import Order from './pages/Order';
+import OrderProduct from './componentes/OrderProduct';
+// import Order from './pages/Order';
 
 function App() {
   return (
@@ -20,8 +21,7 @@ function App() {
           <Route exact path="/register" element={ <Register /> } />
           <Route exact path="/customer/products" element={ <CustomerProducts /> } />
           <Route exact path="/customer/checkout" element={ <Checkout /> } />
-          <Route path="/customer/orders" element={ <Order /> } />
-          {/* <Route path="/orders/:id" element={ <OrdersDetails /> } /> */}
+          <Route exact path="/customer/orders/:id" element={ <OrderProduct /> } />
         </Routes>
       </ContextProvider>
     </div>

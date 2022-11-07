@@ -1,36 +1,58 @@
 import Proptypes from 'prop-types';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function OrderProduct({
+function OrderProduct({
   orderId,
+  order,
   orderStatus,
   orderDate,
   orderPrice,
 }) {
+  const history = useNavigate();
+
+  const orderProductData = (data) => {
+    const newData = data.split('-');
+    const day = newData[2].split('T');
+    const mouth = newData[1];
+    const year = newData[0];
+
+    return `${day[0]}/${mouth}/${year}`;
+  };
+
+  const onClick = (value) => {
+    history(`/customer/orders/${value}`);
+  };
+
+  // const totalOrderPrice = (value) => {
+  //   const result = value.replace(/\./, ',');
+  //   return result;
+  // };
+
   return (
-    <div>
+    <div onClick={ () => onClick(orderId) } aria-hidden="true">
       <p
         data-testid={ `customer_orders__element-order-id-${orderId}` }
       >
-        Pedido:
+        { `Pedido: ${order}` }
+        {/* Pedido:
         {' '}
-        { orderId }
+        { order } */}
       </p>
       <p
         data-testid={ `customer_orders__element-delivery-status-${orderId}` }
       >
-        Pendente:
-        {' '}
         { orderStatus }
       </p>
       <p
         data-testid={ `customer_orders__element-order-date-${orderId}` }
       >
-        { orderDate }
+        { orderProductData(orderDate) }
       </p>
       <p
         data-testid={ `customer_orders__element-card-price-${orderId}` }
       >
-        { Number(orderPrice).toFixed(2).replace('.', ',') }
+        {orderPrice}
       </p>
     </div>
   );
@@ -38,7 +60,10 @@ export default function OrderProduct({
 
 OrderProduct.propTypes = {
   orderId: Proptypes.number,
+  order: Proptypes.string,
   orderStatus: Proptypes.string,
   orderDate: Proptypes.string,
-  orderPrice: Proptypes.number,
+  orderPrice: Proptypes.string,
 }.isRequired;
+
+export default OrderProduct;

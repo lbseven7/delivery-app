@@ -29,12 +29,12 @@ module.exports = {
         onDelete: 'CASCADE',
       },
       totalPrice: {
-        type: Sequelize.DECIMAL,
+        type: Sequelize.DECIMAL(10, 2),
         field: 'total_price'
       },
-      deliveryAdress: {
+      deliveryAddress: {
         type: Sequelize.STRING,
-        field: 'delivery_adress'
+        field: 'delivery_address'
       },
       deliveryNumber: {
         type: Sequelize.STRING,

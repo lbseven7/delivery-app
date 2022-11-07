@@ -2,14 +2,37 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../componentes/NavBar';
 import CheckoutProduct from '../componentes/CheckoutProduct';
+import { createSale } from '../Services/requests';
 
 function Checkout() {
   const [cartCheckout, setCartCheckout] = useState(JSON
     .parse(localStorage.getItem('cartItems')) || []);
+  const [address, setAddress] = useState('');
+  const [number, setNumber] = useState('');
+  // const [seller, setSeller] = useState('');
 
   const totalPrice = JSON.parse(localStorage.getItem('totalPrice'));
 
   const history = useNavigate();
+
+  const finishOrder = async () => {
+    const sale = {
+      sellerId: 2,
+      totalPrice,
+      deliveryAddress: address,
+      deliveryNumber: number,
+      orders: cartCheckout.map(({ id, quantity }) => ({
+        productId: id,
+        quantity,
+      })),
+    };
+
+    const { data } = await createSale(sale);
+    if (data.message) {
+      console.log(data.message);
+    }
+    history(`/customer/orders/${data.id}`);
+  };
 
   return (
     <section>
@@ -47,17 +70,19 @@ function Checkout() {
         id="adress"
         type="text"
         placeholder="Travessa Terceira da Castanheira, Bairro Muruci"
+        onChange={ ({ target: { value } }) => setAddress(value) }
       />
       <input
         data-testid="customer_checkout__input-address-number"
         id="adress-number"
         type="number"
         placeholder="198"
+        onChange={ ({ target: { value } }) => setNumber(value) }
       />
       <button
         type="button"
         data-testid="customer_checkout__button-submit-order"
-        onClick={ () => history('/customer/orders/3') }
+        onClick={ finishOrder }
       >
         FINALIZAR PEDIDO
       </button>
