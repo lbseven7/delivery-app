@@ -9,6 +9,7 @@ import Register from './pages/Register';
 import CustomerProducts from './pages/CustomerProducts';
 import Checkout from './pages/Checkout';
 import Order from './pages/Order';
+import OrderDetails from './componentes/OrderDetails';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route exact path="/customer/products" element={ <CustomerProducts /> } />
           <Route exact path="/customer/checkout" element={ <Checkout /> } />
           <Route exact path="/customer/orders" element={ <Order /> } />
-          {/* <Route exact path="/customer/orders/:id" element={ <Order /> } /> */}
+          <Route exact path="/customer/orders/:id" element={ <OrderDetails /> } />
         </Routes>
       </ContextProvider>
     </div>
