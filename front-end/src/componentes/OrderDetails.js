@@ -34,17 +34,22 @@ function OrderDetails() {
   return (
     <div onClick={ () => onClick(orderId) } aria-hidden="true">
       <p
-        data-testid={ `customer_order_details__element-order-details-label-order-${id}` }
+        data-testid="customer_order_details__element-order-details-label-order-id"
       >
         { `Pedido: ${id}` }
       </p>
-      {/** inserir datatestid do status */}
-      <p>
+
+      <p
+        data-testid={
+          `customer_order_details__element-order-details-label-delivery-status${id}`
+        }
+      >
         { status }
       </p>
       <button
         data-testid="customer_order_details__button-delivery-check"
         type="button"
+        disabled="true"
       >
         MARCAR COMO ENTREGUE
       </button>
