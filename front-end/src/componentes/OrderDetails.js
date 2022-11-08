@@ -38,7 +38,7 @@ function OrderDetails() {
       >
         { `Pedido: ${id}` }
       </p>
-      {/** inserir datatestid */}
+      {/** inserir datatestid do status */}
       <p>
         { status }
       </p>
