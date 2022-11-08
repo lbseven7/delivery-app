@@ -1,4 +1,4 @@
-const { Sale, saleProduct, sequelize } = require('../database/models');
+const { Sale, SaleProduct, Product, sequelize } = require('../database/models');
 
 const getUtcDate = () => {
   const d = new Date();
@@ -21,7 +21,7 @@ const createSaleService = async (sales, orders) => {
         quantity,
       }));
 
-      await saleProduct.bulkCreate(salesArray, { transaction });
+      await SaleProduct.bulkCreate(salesArray, { transaction });
       return dataValues;
     });
     return { code: 201, data: trs };
@@ -38,4 +38,24 @@ const findUserService = async (userId) => {
   return { code: 200, sales };
 };
 
-module.exports = { createSaleService, findUserService };
+const findSellerService = async (sellerId) => {
+  if (!sellerId) {
+    return { code: 404, message: 'Seller not found' };
+  }
+  const sales = await Sale.findAll({ where: { sellerId } });
+  return { code: 200, sales };
+};
+
+const findSalesProducts = async () => {
+  const sales = await Sale.findAll(
+    {
+      include: 
+      [
+        { model: Product, as: 'sales', through: { attributes: ['saleId', 'quantity'] } },
+      ],
+    },
+  );
+  return { code: 200, sales };
+};
+
+module.exports = { createSaleService, findUserService, findSellerService, findSalesProducts };

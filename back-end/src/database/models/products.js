@@ -14,13 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     underscored: true
   });
 
-  Product.associate = (models) => {
-    Product.belongsToMany(models.saleProduct, {
-      through: models.saleProduct, 
-      foreignKey: 'productId', 
-      as: 'product' 
-    });
-  }
+  // Product.associate = (models) => {
+  //   Product.belongsToMany(models.saleProduct, {
+  //     through: models.saleProduct, 
+  //     foreignKey: 'productId', 
+  //     as: 'product' 
+  //   });
+  // }
 
   return Product;
 };

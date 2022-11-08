@@ -63,3 +63,9 @@
   position: relative;
   width: 300px;
 }
+
+.order-card {
+  border: solid 1px black;
+  margin: 15px;
+  width: 300px;
+}
