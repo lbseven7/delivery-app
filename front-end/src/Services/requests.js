@@ -63,7 +63,7 @@ const findSales = async () => {
 
 const findSellerSales = async () => {
   try {
-    const URL = getUrl('/sales/orders');
+    const URL = getUrl('/sales/seller');
     const userInfo = JSON.parse(localStorage.getItem('user'));
 
     const response = await axios.get(URL, {
@@ -79,4 +79,29 @@ const findSellerSales = async () => {
   }
 };
 
-export { requestLoginRegister, requestProducts, createSale, findSales, findSellerSales };
+const findOrder = async (id) => {
+  try {
+    const URL = getUrl(`/sales/orders/${id}`);
+    const userInfo = JSON.parse(localStorage.getItem('user'));
+
+    const response = await axios.get(URL, {
+      headers: {
+        Authorization: userInfo?.token,
+      },
+    });
+
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error.response;
+  }
+};
+
+export {
+  requestLoginRegister,
+  requestProducts,
+  createSale,
+  findSales,
+  findSellerSales,
+  findOrder,
+};

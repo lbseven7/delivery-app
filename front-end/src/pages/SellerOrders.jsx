@@ -10,7 +10,6 @@ function SellerOrders() {
 
   const getSellerSales = useCallback(async () => {
     const response = await findSellerSales();
-    console.log(response);
     setSales(response.data);
     setLoading(false);
   }, []);
@@ -24,7 +23,7 @@ function SellerOrders() {
       { loading ? <p>Carregando...</p> : (
         sales.map((sale, index) => (
           <SellerProduct
-            key={ sale.id }
+            key={ index }
             sales={ sale }
             orderId={ index + 1 }
           />

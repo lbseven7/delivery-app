@@ -12,6 +12,6 @@ const salesRouter = Router();
 salesRouter.post('/', auth, createSaleController);
 salesRouter.get('/', auth, findUserController);
 salesRouter.get('/seller', auth, findSellerController);
-salesRouter.get('/orders', auth, findSalesProductsController);
+salesRouter.get('/orders/:id', auth, findSalesProductsController);
 
 module.exports = { salesRouter };

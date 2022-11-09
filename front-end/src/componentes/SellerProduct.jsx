@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function SellerProduct(
   {
-    sales: { id, userId, deliveryAddress, deliveryNumber, totalPrice, saleDate, status },
+    sales: { id, deliveryAddress, deliveryNumber, totalPrice, saleDate, status },
     orderId,
   },
 ) {
@@ -18,29 +18,29 @@ function SellerProduct(
 
   return (
     <div className="order-card">
-      <Link to={ `/customer/orders/${id}` }>
+      <Link to={ `/seller/orders/${id}` }>
         <p
-          data-testid={ `seller_orders__element-order-id-${userId}` }
+          data-testid={ `seller_orders__element-order-id-${id}` }
         >
           { orderId }
         </p>
         <p
-          data-testid={ `seller_orders__element-delivery-status-${userId}` }
+          data-testid={ `seller_orders__element-delivery-status-${id}` }
         >
           { status }
         </p>
         <p
-          data-testid={ `seller_orders__element-order-date-${userId}` }
+          data-testid={ `seller_orders__element-order-date-${id}` }
         >
           { orderProductData(saleDate) }
         </p>
         <p
-          data-testid={ `seller_orders__element-card-price-${userId}` }
+          data-testid={ `seller_orders__element-card-price-${id}` }
         >
           { totalPrice }
         </p>
         <p
-          data-testid={ `seller_orders__element-card-address-${userId}` }
+          data-testid={ `seller_orders__element-card-address-${id}` }
         >
           { `${deliveryAddress}, ${deliveryNumber}` }
         </p>

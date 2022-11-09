@@ -11,6 +11,7 @@ import Checkout from './pages/Checkout';
 import Order from './pages/Order';
 import SellerOrders from './pages/SellerOrders';
 import OrderDetails from './componentes/OrderDetails';
+import SellerDetails from './componentes/SellerDetails';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/customer/orders" element={ <Order /> } />
           <Route exact path="/seller/orders" element={ <SellerOrders /> } />
           <Route exact path="/customer/orders/:id" element={ <OrderDetails /> } />
+          <Route exact path="/seller/orders/:id" element={ <SellerDetails /> } />
         </Routes>
       </ContextProvider>
     </div>

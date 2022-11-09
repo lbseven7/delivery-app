@@ -44,7 +44,8 @@ const findSellerController = async (req, res) => {
 };
 
 const findSalesProductsController = async (req, res) => {
-  const { code, sales } = await findSalesProducts();
+  const { id } = req.params;
+  const { code, sales } = await findSalesProducts(id);
 
   return res.status(code).json(sales);
 };

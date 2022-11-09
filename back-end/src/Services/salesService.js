@@ -1,4 +1,5 @@
-const { Sale, SaleProduct, Product, sequelize } = require('../database/models');
+const { QueryTypes } = require('sequelize');
+const { Sale, SaleProduct, sequelize } = require('../database/models');
 
 const getUtcDate = () => {
   const d = new Date();
@@ -46,15 +47,22 @@ const findSellerService = async (sellerId) => {
   return { code: 200, sales };
 };
 
-const findSalesProducts = async () => {
-  const sales = await Sale.findAll(
+const findSalesProducts = async (id) => {
+  const sales = await sequelize.query(
+    `SELECT sp.quantity, sp.sale_id as saleId, p.name as productName, p.price, 
+    s.sale_date as saleDate, s.status, s.total_price as totalPrice, u.name
+    FROM sales_products AS sp
+    INNER JOIN sales AS s 
+    INNER JOIN products as p
+    INNER JOIN users as u 
+    on sp.sale_id = ? and s.id = ? and p.id = sp.product_id  and u.id = s.seller_id
+    `,
     {
-      include: 
-      [
-        { model: Product, as: 'sales', through: { attributes: ['saleId', 'quantity'] } },
-      ],
+      replacements: [id, id],
+      type: QueryTypes.SELECT,
     },
   );
+
   return { code: 200, sales };
 };
 
