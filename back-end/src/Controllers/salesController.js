@@ -2,7 +2,8 @@ const {
   createSaleService, 
   findUserService, 
   findSellerService,
-  findSalesProducts, 
+  findSalesProducts,
+  findAndChangeStatus, 
 } = require('../Services/salesService');
 
 const createSaleController = async (req, res) => {
@@ -50,9 +51,18 @@ const findSalesProductsController = async (req, res) => {
   return res.status(code).json(sales);
 };
 
+const updateStatusController = async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body;
+  const updatedOrders = await findAndChangeStatus(id, status);
+
+  return res.json(updatedOrders);
+};
+
 module.exports = {
   createSaleController, 
   findUserController,
   findSellerController,
   findSalesProductsController,
+  updateStatusController,
 };

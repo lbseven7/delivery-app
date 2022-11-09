@@ -97,6 +97,24 @@ const findOrder = async (id) => {
   }
 };
 
+const updateOrder = async (id, body) => {
+  try {
+    const URL = getUrl(`/sales/orders/${id}`);
+    const userInfo = JSON.parse(localStorage.getItem('user'));
+
+    const response = await axios.put(URL, body, {
+      headers: {
+        Authorization: userInfo?.token,
+      },
+    });
+
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error.response;
+  }
+};
+
 export {
   requestLoginRegister,
   requestProducts,
@@ -104,4 +122,5 @@ export {
   findSales,
   findSellerSales,
   findOrder,
+  updateOrder,
 };

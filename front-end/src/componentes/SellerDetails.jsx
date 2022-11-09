@@ -1,16 +1,38 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import NavBar from './NavBar';
-import { findOrder } from '../Services/requests';
+import { findOrder, updateOrder } from '../Services/requests';
 
 function SellerDetails() {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isPreparing, setPreparing] = useState(true);
+  const [toDelivery, setDelivey] = useState(true);
+  const devileryStatus = ['Pendente', 'Preparando', 'Em Trânsito'];
+
+  const checkStatus = ({ status }) => {
+    if (status === 'Pendente') {
+      setPreparing(false);
+      setDelivey(true);
+    }
+    if (status === 'Preparando') {
+      setPreparing(true);
+      setDelivey(false);
+    }
+    if (status === 'Em Trânsito') {
+      setPreparing(true);
+      setDelivey(true);
+    }
+    if (status === 'Entregue') {
+      setPreparing(true);
+      setDelivey(true);
+    }
+  };
 
   const getCustomerOrders = useCallback(async () => {
     const { data } = await findOrder(id);
-    console.log(data);
+    checkStatus(data[0]);
     setProducts(data);
     setLoading(false);
   }, [id]);
@@ -26,6 +48,15 @@ function SellerDetails() {
     const year = newData[0];
 
     return `${day[0]}/${mouth}/${year}`;
+  };
+
+  const changeStatus = async () => {
+    setLoading(true);
+    const index = devileryStatus.indexOf(products[0].status);
+    const response = await updateOrder(id, { status: devileryStatus[index + 1] });
+    checkStatus(response);
+    getCustomerOrders();
+    setLoading(false);
   };
 
   return (
@@ -55,6 +86,8 @@ function SellerDetails() {
             <button
               data-testid="seller_order_details__button-preparing-check"
               type="button"
+              disabled={ isPreparing }
+              onClick={ changeStatus }
             >
               Preparando
             </button>
@@ -62,7 +95,8 @@ function SellerDetails() {
             <button
               data-testid="seller_order_details__button-dispatch-check"
               type="button"
-              disabled
+              disabled={ toDelivery }
+              onClick={ changeStatus }
             >
               Saiu para entrega
             </button>

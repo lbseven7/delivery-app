@@ -66,4 +66,17 @@ const findSalesProducts = async (id) => {
   return { code: 200, sales };
 };
 
-module.exports = { createSaleService, findUserService, findSellerService, findSalesProducts };
+const findAndChangeStatus = async (id, status) => {
+  const updatedOrder = await Sale.update({ status }, { where: { id } });
+  const getOrder = await Sale.findOne({ where: { id } });
+  console.log(updatedOrder);
+  return getOrder;
+};
+
+module.exports = {
+  createSaleService,
+  findUserService,
+  findSellerService,
+  findSalesProducts,
+  findAndChangeStatus,
+};
