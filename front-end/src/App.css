@@ -1,6 +1,19 @@
-/* .App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+root {
+  --primary-color: #f0c14b;
+  --secondary-color: #111;
+  --terciary-color: #f3f3f3;
+  --quaternary-color: #ddd;
+}
+
+.App {
   align-items: center;
-  background: #0fa36b;
+  background: #e6b001;
   color: #464646;
   display: flex;
   flex-direction: column;
@@ -10,49 +23,77 @@
   width: 100%;
 }
 
-.App > .logo {
-  animation: shake 1.5s infinite ease;
-  color: aliceblue;
-  font-family: Montserrat , sans-serif;
-  font-size: 3em;
-  font-weight: 900;
+/* LOGIN START */
+
+.data-login-form-container {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  width: 400px;
 }
 
-.rocksGlass {
-  animation: shake 1s infinite ease;
-  max-height: 80vh;
+.login-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
-@keyframes shake {
-
-  0% {
-    transform: rotate(5deg);
-  }
-
-  50% {
-    transform: rotate(-5deg);
-  }
-
-  100% {
-    transform: rotate(5deg);
-  }
+.login-label > span {
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
-@keyframes clink {
+.login-label > input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  height: 30px;
+  padding: 5px;
+}
 
-  0% {
-    transform: rotate(-10deg);
-  }
+.login-label > input:focus {
+  border: 1px solid #f0c14b;
+}
 
-  50% {
-    transform: rotate(20deg);
-  }
+.login-button {
+  background: #f0c14b;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  height: 30px;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
 
-  100% {
-    transform: rotate(-10deg);
-  }
-} */
+.login-button:hover {
+  background: #f0c14b;
+  opacity: 0.8;
+}
 
+.register-button {
+  background: #f0c14b;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  height: 30px;
+  margin-top: 10px;
+  /* text-transform: uppercase; */
+}
+
+/* LOGIN END */
+
+/* CARD START */
 .card-product {
   border: solid 1px black;
   border-radius: 3px;

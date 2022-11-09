@@ -93,6 +93,7 @@ function Login() {
             onChange={ (event) => handleChange(event) }
           />
           <button
+            className="login-button"
             type="button"
             name="button"
             data-testid="common_login__button-login"
@@ -102,6 +103,7 @@ function Login() {
             LOGIN
           </button>
           <button
+            className="register-button"
             type="button"
             name="button"
             data-testid="common_login__button-register"
