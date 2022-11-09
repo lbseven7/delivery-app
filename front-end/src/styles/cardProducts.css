@@ -82,6 +82,7 @@ img:hover{
 .btn-less:hover {
   background: var(--btn-plus-less);
   transition: 0.5s;
+  color: black;
 }
 
 
@@ -102,6 +103,7 @@ img:hover{
 .btn-plus:hover {
   background: var(--btn-plus-less);
   transition: 0.5s;
+  color: black;
 }
 
 .input-quantity {
