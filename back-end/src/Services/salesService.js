@@ -1,4 +1,5 @@
-const { Sale, saleProduct, sequelize } = require('../database/models');
+const { QueryTypes } = require('sequelize');
+const { Sale, SaleProduct, sequelize } = require('../database/models');
 
 const getUtcDate = () => {
   const d = new Date();
@@ -21,7 +22,7 @@ const createSaleService = async (sales, orders) => {
         quantity,
       }));
 
-      await saleProduct.bulkCreate(salesArray, { transaction });
+      await SaleProduct.bulkCreate(salesArray, { transaction });
       return dataValues;
     });
     return { code: 201, data: trs };
@@ -38,4 +39,44 @@ const findUserService = async (userId) => {
   return { code: 200, sales };
 };
 
-module.exports = { createSaleService, findUserService };
+const findSellerService = async (sellerId) => {
+  if (!sellerId) {
+    return { code: 404, message: 'Seller not found' };
+  }
+  const sales = await Sale.findAll({ where: { sellerId } });
+  return { code: 200, sales };
+};
+
+const findSalesProducts = async (id) => {
+  const sales = await sequelize.query(
+    `SELECT sp.quantity, sp.sale_id as saleId, p.name as productName, p.price, 
+    s.sale_date as saleDate, s.status, s.total_price as totalPrice, u.name
+    FROM sales_products AS sp
+    INNER JOIN sales AS s 
+    INNER JOIN products as p
+    INNER JOIN users as u 
+    on sp.sale_id = ? and s.id = ? and p.id = sp.product_id  and u.id = s.seller_id
+    `,
+    {
+      replacements: [id, id],
+      type: QueryTypes.SELECT,
+    },
+  );
+
+  return { code: 200, sales };
+};
+
+const findAndChangeStatus = async (id, status) => {
+  const updatedOrder = await Sale.update({ status }, { where: { id } });
+  const getOrder = await Sale.findOne({ where: { id } });
+  console.log(updatedOrder);
+  return getOrder;
+};
+
+module.exports = {
+  createSaleService,
+  findUserService,
+  findSellerService,
+  findSalesProducts,
+  findAndChangeStatus,
+};

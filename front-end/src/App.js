@@ -9,7 +9,9 @@ import Register from './pages/Register';
 import CustomerProducts from './pages/CustomerProducts';
 import Checkout from './pages/Checkout';
 import Order from './pages/Order';
+import SellerOrders from './pages/SellerOrders';
 import OrderDetails from './componentes/OrderDetails';
+import SellerDetails from './componentes/SellerDetails';
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
           <Route exact path="/customer/products" element={ <CustomerProducts /> } />
           <Route exact path="/customer/checkout" element={ <Checkout /> } />
           <Route exact path="/customer/orders" element={ <Order /> } />
+          <Route exact path="/seller/orders" element={ <SellerOrders /> } />
           <Route exact path="/customer/orders/:id" element={ <OrderDetails /> } />
+          <Route exact path="/seller/orders/:id" element={ <SellerDetails /> } />
         </Routes>
       </ContextProvider>
     </div>

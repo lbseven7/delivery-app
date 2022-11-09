@@ -13,8 +13,11 @@ function Login() {
   const [failedTryLogin, setFailedTryLogin] = useState(false);
 
   const loginRedirect = useCallback(() => {
-    const user = localStorage.getItem('user');
+    const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
+      if (user.role === 'seller') {
+        return history('/seller/orders');
+      }
       history('/customer/products');
     }
   }, [history]);
@@ -56,6 +59,9 @@ function Login() {
         };
         setUserInfo(userInfo);
         localStorage.setItem('user', JSON.stringify(userInfo));
+        if (data.role === 'seller') {
+          return history('/seller/orders');
+        }
         history('/customer/products');
       }
     } catch (error) {
