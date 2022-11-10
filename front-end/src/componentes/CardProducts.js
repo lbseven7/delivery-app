@@ -78,7 +78,7 @@ function CardProducts({ product }) {
   return (
     <span
       key={ id }
-      className="card-product"
+      className="card-products"
     >
       <img
         data-testid={ `customer_products__img-card-bg-image-${id}` }

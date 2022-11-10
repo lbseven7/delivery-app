@@ -2,6 +2,7 @@ import React, { useState, useContext, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { requestLoginRegister } from '../Services/requests';
 import DeliveryContext from '../context/deliveryContext';
+import Logo from '../componentes/Logo';
 
 function Login() {
   const history = useNavigate();
@@ -71,10 +72,14 @@ function Login() {
   };
 
   return (
-    <div className="data-login-form-container">
-      <form>
+    <div className="container">
+      <Logo />
+      <form className="data-login-form-container">
         <label className="login-label" htmlFor="email-input">
           <span>Login</span>
+          <span className="material-symbols-outlined">
+            person
+          </span>
           <input
             type="email"
             name="email"
@@ -83,7 +88,10 @@ function Login() {
             data-testid="common_login__input-email"
             onChange={ (event) => handleChange(event) }
           />
-          <span>Senha</span>
+          <span>Password</span>
+          <span className="material-symbols-outlined">
+            lock
+          </span>
           <input
             type="password"
             name="password"
@@ -100,7 +108,10 @@ function Login() {
             disabled={ !loginRequeriments() }
             onClick={ () => login() }
           >
-            LOGIN
+            ENTER
+            {/* <span className="material-symbols-outlined">
+              lock
+            </span> */}
           </button>
           <button
             className="register-button"
