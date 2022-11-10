@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 body {
   /* font-family: 'Comfortaa', cursive; */
   background-image: url("./images/fundo.jpg");
@@ -13,6 +14,10 @@ body {
 
 :root {
   --primary-color: #040100d7;
+=======
+root {
+  --primary-color: #171001;
+>>>>>>> be55cb0d (feat: refatorando o css do login)
   --secondary-color: rgb(225, 185, 7);
   --terciary-color: #f3f3f3;
   --quaternary-color: #ddd;
@@ -32,13 +37,19 @@ body {
   flex-direction: column;
   height: 100vh;
   justify-content: center;
+<<<<<<< HEAD
   /* width: 100%; */
   /* font-family: 'Confortaa', cursive; */
+=======
+  width: 100%;
+  font-family: 'Confortaa', cursive;
+>>>>>>> be55cb0d (feat: refatorando o css do login)
 }
 
 /* LOGIN START */
 
 .data-login-form-container {
+<<<<<<< HEAD
   background: var(--bg-form-color);
   border-radius: 10px;
   box-shadow: 0 0 15px 3px var(--box-shadow);
@@ -46,6 +57,15 @@ body {
   font-family: 'Comfortaa', cursive;
   font-weight: 700;
   width: 30em;
+=======
+  background: rgb(226, 219, 200);
+  /* display: flex; */
+  /* flex-direction: column; */
+  border-radius: 10px;
+  box-shadow: 0 0 15px 3px rgba(62, 58, 54, 0.7);
+  padding: 3em;
+  font-family: 'Comfortaa', cursive;
+>>>>>>> be55cb0d (feat: refatorando o css do login)
 }
 
 .login-label {
@@ -60,6 +80,7 @@ body {
 }
 
 .login-label > input {
+<<<<<<< HEAD
   background: var(--bg-input-color);
   border: none;
   border-radius: 5px;
@@ -86,25 +107,61 @@ body {
   font-weight: bold;
   margin-top: 1em;
   margin-bottom: 10px;
+=======
+  border: 1px solid rgb(187, 122, 1);
+  border-radius: 5px;
+  height: 4em;
+  padding: 1em;
+  margin-bottom: 1em;
+  font-family: 'Comfortaa', cursive;
+}
+
+.login-label > input:focus {
+  border: 1px solid #f0c14b;
+}
+
+.login-button {
+  background: #271b01;
+  height: 3em;
+  font-family: 'Confortaa', cursive;
+  border-radius: 5px;
+  color: rgb(251, 209, 164);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+>>>>>>> be55cb0d (feat: refatorando o css do login)
   text-transform: uppercase;
   box-shadow: 0 0 15px 3px var(--box-shadow);
 }
 
 .login-button:hover {
+<<<<<<< HEAD
   background: var(--btn-login-hover);
+=======
+  background: #814900;
+>>>>>>> be55cb0d (feat: refatorando o css do login)
   opacity: 0.8;
 }
 
 .register-button {
+<<<<<<< HEAD
   background: var(--btn-register-bg);
   border: none;
   height: 3em;
   border-radius: 5px;
   color: var(--font-color);
+=======
+  border: 1px solid #814900;
+  height: 3em;
+  border-radius: 5px;
+  color: rgb(6, 3, 0);
+>>>>>>> be55cb0d (feat: refatorando o css do login)
   cursor: pointer;
   font-size: 16px;
   margin-top: 10px;
   text-transform: uppercase;
+<<<<<<< HEAD
   font-family: 'Comfortaa', cursive;
   font-weight: 700;
   box-shadow: 0 0 15px 3px var(--box-shadow);
@@ -112,6 +169,13 @@ body {
 
 .register-button:hover {
  background: var(--btn-register-rover); 
+=======
+  font-family: 'Confortaa', cursive;
+}
+
+.register-button:hover {
+  background: #fcf7f3;
+>>>>>>> be55cb0d (feat: refatorando o css do login)
 }
 
 /* LOGIN END */
@@ -120,6 +184,7 @@ body {
 .logo {
   display: flex;
   margin: auto;
+<<<<<<< HEAD
   width: 40%;
   margin-bottom: 1em;
   border-radius: 50%;
@@ -127,3 +192,36 @@ body {
 }
 
 /* LOGO END*/
+=======
+  width: 50%;
+  margin-bottom: 1em;
+  border: 1px solid red;
+  border-radius: 100%;
+}
+
+/* LOGO END*/
+
+/* CARD START */
+.card-products {
+  border: solid 1px black;
+  border-radius: 3px;
+  display: inline-block;
+  height: 240px;
+  margin: 1rem;
+  padding: 3px;
+  position: relative;
+  width: 300px;
+}
+
+.card-products > img {
+  background-color: #814900;
+}
+
+/* .order-card {
+  border: solid 1px black;
+  margin: 15px;
+  width: 300px;
+} */
+
+/* CARD END */
+>>>>>>> be55cb0d (feat: refatorando o css do login)

@@ -2,7 +2,11 @@ import React, { useState, useContext, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { requestLoginRegister } from '../Services/requests';
 import DeliveryContext from '../context/deliveryContext';
+<<<<<<< HEAD
 import Logo from '../componentes/Logo-login';
+=======
+import Logo from '../componentes/Logo';
+>>>>>>> be55cb0d (feat: refatorando o css do login)
 
 function Login() {
   const history = useNavigate();

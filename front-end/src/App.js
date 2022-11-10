@@ -1,8 +1,12 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
+<<<<<<< HEAD
 import './styles/cardProducts.css';
 import './styles/navBar.css';
+=======
+// import './Styles/login.css';
+>>>>>>> be55cb0d (feat: refatorando o css do login)
 
 import ContextProvider from './context/ContextProvider';
 
