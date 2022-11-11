@@ -2,7 +2,7 @@ import React, { useState, useContext, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { requestLoginRegister } from '../Services/requests';
 import DeliveryContext from '../context/deliveryContext';
-import Logo from '../componentes/Logo';
+import Logo from '../componentes/Logo-login';
 
 function Login() {
   const history = useNavigate();

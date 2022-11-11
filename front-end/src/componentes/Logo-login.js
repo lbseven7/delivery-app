@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../images/logo.png';
 
 function Logo() {
   return (
@@ -6,7 +7,7 @@ function Logo() {
       <h1>
         <img
           className="logo"
-          src="https://i.pinimg.com/736x/65/2a/22/652a220687b1f6a3e46425d959415cd0.jpg"
+          src={ logo }
           alt="logo"
         />
       </h1>

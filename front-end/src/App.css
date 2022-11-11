@@ -13,27 +13,33 @@ root {
   --quaternary-color: #ddd;
 }
 
+body {
+  /* font-family: 'Comfortaa', cursive; */
+  background-image: url("./images/fundo.jpg");
+}
+
 .App {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-family: sans-serif;
   height: 100vh;
   justify-content: center;
-  width: 100%;
-  font-family: 'Confortaa', cursive;
+  /* width: 100%; */
+  /* font-family: 'Confortaa', cursive; */
 }
 
 /* LOGIN START */
 
 .data-login-form-container {
-  background: rgb(226, 219, 200);
+  background: rgba(230, 216, 178, 0.418);
   /* display: flex; */
   /* flex-direction: column; */
   border-radius: 10px;
   box-shadow: 0 0 15px 3px rgba(62, 58, 54, 0.7);
   padding: 3em;
   font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  width: 30em;
 }
 
 .login-label {
@@ -48,12 +54,16 @@ root {
 }
 
 .login-label > input {
-  border: 1px solid rgb(187, 122, 1);
+  background: #fcf4d658;
+  /* border: 1px solid rgb(187, 122, 1); */
+  border: none;
   border-radius: 5px;
   height: 4em;
   padding: 1em;
   margin-bottom: 1em;
   font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  box-shadow: 0 0 15px 3px rgba(62, 58, 54, 0.604);
 }
 
 .login-label > input:focus {
@@ -61,25 +71,30 @@ root {
 }
 
 .login-button {
-  background: #271b01;
+  background: #040100d7;
   height: 3em;
-  font-family: 'Confortaa', cursive;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
   border-radius: 5px;
+  border: none;
   color: rgb(251, 209, 164);
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 1em;
+  margin-bottom: 10px;
   text-transform: uppercase;
+  box-shadow: 0 0 15px 3px rgba(62, 58, 54, 0.604);
 }
 
 .login-button:hover {
-  background: #814900;
+  background: #321900;
   opacity: 0.8;
 }
 
 .register-button {
-  border: 1px solid #814900;
+  background: #d7a90160;
+  border: none;
   height: 3em;
   border-radius: 5px;
   color: rgb(6, 3, 0);
@@ -87,11 +102,13 @@ root {
   font-size: 16px;
   margin-top: 10px;
   text-transform: uppercase;
-  font-family: 'Confortaa', cursive;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  box-shadow: 0 0 15px 3px rgba(62, 58, 54, 0.604);
 }
 
 .register-button:hover {
-  background: #fcf7f3;
+  background: #f0c14b;
 }
 
 /* LOGIN END */
@@ -100,10 +117,10 @@ root {
 .logo {
   display: flex;
   margin: auto;
-  width: 50%;
+  width: 40%;
   margin-bottom: 1em;
-  border: 1px solid red;
-  border-radius: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 3px rgba(62, 58, 54, 0.604);
 }
 
 /* LOGO END*/
