@@ -81,6 +81,7 @@ function CardProducts({ product }) {
       className="card-products"
     >
       <img
+        className="card-products-img"
         data-testid={ `customer_products__img-card-bg-image-${id}` }
         src={ urlImage }
         alt={ name }
@@ -98,21 +99,23 @@ function CardProducts({ product }) {
       >
         { price.replace('.', ',') }
       </p>
-      <button
-        name={ name }
-        type="button"
-        data-testid={ `customer_products__button-card-rm-item-${id}` }
-        onClick={ () => {
-          if (productsButton > 0) {
-            setProductsButton(productsButton - 1);
-            sumItems(productsButton - 1, product);
-          }
-        } }
-      >
-        -
-      </button>
       <label htmlFor={ name }>
+        <button
+          className="btn-less"
+          name={ name }
+          type="button"
+          data-testid={ `customer_products__button-card-rm-item-${id}` }
+          onClick={ () => {
+            if (productsButton > 0) {
+              setProductsButton(productsButton - 1);
+              sumItems(productsButton - 1, product);
+            }
+          } }
+        >
+          -
+        </button>
         <input
+          className="input-quantity"
           name={ name }
           type="number"
           value={ productsButton }
@@ -124,18 +127,19 @@ function CardProducts({ product }) {
           } }
           data-testid={ `customer_products__input-card-quantity-${id}` }
         />
+        <button
+          className="btn-plus"
+          name={ name }
+          type="button"
+          data-testid={ `customer_products__button-card-add-item-${id}` }
+          onClick={ () => {
+            setProductsButton(productsButton + 1);
+            sumItems(productsButton + 1, product);
+          } }
+        >
+          +
+        </button>
       </label>
-      <button
-        name={ name }
-        type="button"
-        data-testid={ `customer_products__button-card-add-item-${id}` }
-        onClick={ () => {
-          setProductsButton(productsButton + 1);
-          sumItems(productsButton + 1, product);
-        } }
-      >
-        +
-      </button>
     </span>
   );
 }
