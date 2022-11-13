@@ -19,37 +19,40 @@
   --btn-login-hover:#321900;
   --box-shadow: rgba(62, 58, 54, 0.604);
   --btn-register-bg: #91845760;
-  --btn-plus-less: #f0c14b;
+  --btn-plus-less: #f0c14ba7;
 }
 
 /* CARD START */
 .card-products {
-  background: white;
-  box-shadow: var(--box-shadow);
+  background: rgba(138, 104, 69, 0.49);
   border-radius: 0.5em;
-  display: inline-block;
-  height: 15em;
+  display: inline-table;
   margin: 1rem;
   padding: 1em;
-  position: relative;
-  width: 25em;
+  margin-top: 2em;
+}
+
+span {
+  font-size: 1.5em;
 }
 
 .card-products-img {
-  display:flex;
-  justify-content: center;
-  align-self: center;
-  object-fit: cover;
+  /* background: rgba(190, 190, 190, 0.423); */
   border-radius: 0.5em;
+  height: 7em;
+  width: 7em;
+  margin-left: 1.5em;
 }
 
-.card-products > p {
-  background: var(--quaternary-color);
+img:hover{
+  transform: scale(1.3);
+  transition: 0.5s;
+}
+
+.card-products > label {
   color: var(--btn-login-hover);
   font-family: 'Confortaa', cursive;
-  font-weight: 600;
-  font-size: 1.2em;
-  margin: 0.5rem;
+  font-weight: 700;
 }
 
 .btn-less {
@@ -59,12 +62,10 @@
   color: var(--btn-login-hover);
   cursor: pointer;
   font-family: 'Confortaa', cursive;
-  font-size: 1.7em;
+  font-size: 1.2em;
   font-weight: 600;
-  height: 30px;
-  margin: 0.5rem;
-  top: 0;
-  width: 30px;
+  width: 3.5em;
+  height: 2.6em;
 }
 
 .btn-plus {
@@ -76,15 +77,16 @@
   font-family: 'Confortaa', cursive;
   font-size: 1.2em;
   font-weight: 600;
-  height: 30px;
-  /* left: 0; */
-  margin: 0.5rem;
-  /* position: absolute; */
-  top: 0;
-  width: 30px;
+  width: 3.5em;
+  height: 2.6em;
 }
 
 .input-quantity {
   padding: 0.5em;
+  font-size: 0.5em;
+  width: 4.5em;
+  height: 6.5em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 /* CARD END */
