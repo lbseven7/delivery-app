@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import './styles/cardProducts.css';
+import './styles/navBar.css';
 
 import ContextProvider from './context/ContextProvider';
 
