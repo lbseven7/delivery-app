@@ -8,7 +8,9 @@
 
 body {
   /* font-family: 'Comfortaa', cursive; */
-  background-image: url("./images/fundo.jpg");
+  background-image: url("./images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 :root {
@@ -43,131 +45,6 @@ body {
   flex-direction: column;
   height: 100vh;
   justify-content: center;
-
-  /* width: 100%; */
-
-  /* font-family: 'Confortaa', cursive; */
+  width: 100%;
+  font-family: 'Confortaa', cursive;
 }
-
-/* LOGIN START */
-.data-login-form-container {
-  background: var(--bg-form-color);
-  border-radius: 10px;
-  box-shadow: 0 0 15px 3px var(--box-shadow);
-  font-family: Comfortaa, cursive;
-  font-weight: 700;
-  padding: 3em;
-  width: 30em;
-}
-
-.login-label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
-.login-label > span {
-  font-size: 1.9em;
-  margin-bottom: 5px;
-}
-
-.login-label > input {
-  background: var(--bg-input-color);
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 15px 3px var(--box-shadow);
-  color: #171001;
-  font-family: Comfortaa, cursive;
-  font-size: 1em;
-  font-weight: 700;
-  height: 4em;
-  margin-bottom: 1em;
-  padding: 1em;
-}
-
-.login-button {
-  background: var(--primary-color);
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 15px 3px var(--box-shadow);
-  color: var(--btn-color);
-  cursor: pointer;
-  font-family: Comfortaa, cursive;
-  font-size: 16px;
-  font-weight: 700;
-  font-weight: bold;
-  height: 3em;
-  margin-bottom: 10px;
-  margin-top: 1em;
-  text-transform: uppercase;
-}
-
-.login-button:hover {
-  background: var(--btn-login-hover);
-  background: #814900;
-  opacity: 0.8;
-}
-
-.register-button {
-  background: var(--btn-register-bg);
-  border: 1px solid #814900;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 15px 3px var(--box-shadow);
-  color: var(--font-color);
-  color: rgb(6, 3, 0);
-  cursor: pointer;
-  font-family: Comfortaa, cursive;
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: 700;
-  height: 3em;
-  text-transform: uppercase;
-}
-
-.register-button:hover {
-  background: var(--btn-register-rover);
-  font-family: Confortaa, cursive;
-}
-
-.register-button:hover {
-  background: #fcf7f3;
-}
-
-/* LOGIN END */
-
-/* LOGO START */
-.logo {
-  border-radius: 50%;
-  box-shadow: 0 0 15px 3px var(--box-shadow);
-  display: flex;
-  margin: auto;
-  margin-bottom: 1em;
-  width: 40%;
-}
-
-/* LOGO END */
-
-/* CARD START */
-.card-products {
-  border: solid 1px black;
-  border-radius: 3px;
-  display: inline-block;
-  height: 240px;
-  margin: 1rem;
-  padding: 3px;
-  position: relative;
-  width: 300px;
-}
-
-.card-products > img {
-  background-color: #814900;
-}
-
-/* .order-card {
-  border: solid 1px black;
-  margin: 15px;
-  width: 300px;
-} */
-
-/* CARD END */

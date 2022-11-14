@@ -73,8 +73,8 @@ function Login() {
 
   return (
     <div className="container">
-      <Logo />
       <form className="data-login-form-container">
+        <Logo />
         <label className="login-label" htmlFor="email-input">
           <span>Login</span>
           <span className="material-symbols-outlined">
