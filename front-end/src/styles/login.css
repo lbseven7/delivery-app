@@ -1,23 +1,58 @@
-/* LOGIN START */
+
+:root {
+  --primary-color: #040100d7;
+
+  --secondary-color: rgb(225, 185, 7);
+
+  --terciary-color: #f3f3f3;
+
+  --quaternary-color: #ddd;
+
+  --font-color: rgb(6, 3, 0);
+
+  --btn-register-rover: #f0c14b;
+
+  --bg-form-color: rgba(230, 216, 178, 0.418);
+
+  --bg-input-color: #fcf4d658;
+
+  --btn-color: rgb(251, 209, 164);
+
+  --btn-login-hover: #321900;
+
+  --box-shadow: rgba(62, 58, 54, 0.604);
+
+  --btn-register-bg: #91845760;
+}
+
+/*LOGIN START */
 .data-login-form-container {
   background: var(--bg-form-color);
   border-radius: 10px;
   box-shadow: 0 0 15px 3px var(--box-shadow);
-  font-family: Comfortaa, cursive;
+  font-family: 'Comfortaa', cursive;
   font-weight: 700;
   padding: 3em;
   width: 30em;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* font-family: 'Confortaa', cursive; */
+}
+
 .login-label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
 }
 
 .login-label > span {
   font-size: 1.9em;
   margin-bottom: 5px;
+  font-family: 'Comfortaa', cursive;
 }
 
 .login-label > input {
@@ -26,8 +61,7 @@
   border-radius: 5px;
   box-shadow: 0 0 15px 3px var(--box-shadow);
   color: #171001;
-  font-family: Comfortaa, cursive;
-  font-size: 1em;
+  font-family: 'Comfortaa', cursive;
   font-weight: 700;
   height: 4em;
   margin-bottom: 1em;
@@ -37,12 +71,12 @@
 .login-button {
   background: var(--primary-color);
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5em;
   box-shadow: 0 0 15px 3px var(--box-shadow);
   color: var(--btn-color);
   cursor: pointer;
-  font-family: Comfortaa, cursive;
-  font-size: 16px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.5em;
   font-weight: 700;
   height: 3em;
   margin-bottom: 10px;
@@ -52,42 +86,55 @@
 
 .login-button:hover {
   background: var(--btn-login-hover);
-  background: #814900;
+  background: #1a1919;
   opacity: 0.8;
+  color: #f1e8d5;
 }
 
 .register-button {
-  background: var(--btn-register-bg);
+  background: #e0a102;
   border: none;
-  border: 1px solid #814900;
-  border-radius: 5px;
+  border-radius: 0.5em;
   box-shadow: 0 0 15px 3px var(--box-shadow);
   color: rgb(6, 3, 0);
   color: var(--font-color);
   cursor: pointer;
-  font-family: Comfortaa, cursive;
+  font-family: 'Comfortaa', cursive;
   font-size: 16px;
   font-weight: 700;
   height: 3em;
   margin-top: 10px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .register-button:hover {
-  background: var(--btn-register-rover);
-  font-family: Confortaa, cursive;
+  background: #fb8f03;
+  font-family: 'Comfortaa', cursive;
 }
 
 /* LOGIN END */
 
 /* LOGO START */
 .logo {
-  border-radius: 50%;
+  border-radius: 20%;
   box-shadow: 0 0 15px 3px var(--box-shadow);
   display: flex;
   margin: auto;
-  /* margin-bottom: 1em; */
-  width: 40%;
+  margin-bottom: 1em;
+  width:30%;
+}
+
+.main-logo {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  text-align: center;
+}
+
+.right-logo {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.8em;
 }
 
 /* LOGO END */

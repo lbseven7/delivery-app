@@ -11,6 +11,7 @@ body {
   background-image: url("./images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: 'Comfortaa', cursive;
 }
 
 :root {
@@ -46,5 +47,6 @@ body {
   height: 100vh;
   justify-content: center;
   width: 100%;
-  font-family: 'Confortaa', cursive;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
 }

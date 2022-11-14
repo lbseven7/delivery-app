@@ -77,9 +77,9 @@ function Login() {
         <Logo />
         <label className="login-label" htmlFor="email-input">
           <span>Login</span>
-          <span className="material-symbols-outlined">
+          {/* <span className="material-symbols-outlined">
             person
-          </span>
+          </span> */}
           <input
             type="email"
             name="email"
@@ -89,9 +89,9 @@ function Login() {
             onChange={ (event) => handleChange(event) }
           />
           <span>Password</span>
-          <span className="material-symbols-outlined">
+          {/* <span className="material-symbols-outlined">
             lock
-          </span>
+          </span> */}
           <input
             type="password"
             name="password"

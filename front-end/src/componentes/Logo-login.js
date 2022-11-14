@@ -3,14 +3,17 @@ import logo from '../images/logo.png';
 
 function Logo() {
   return (
-    <div className="logo-fast-birita">
-      <h1>
+    <div className="main-logo">
+      <div className="left-logo">
         <img
           className="logo"
           src={ logo }
           alt="logo"
         />
-      </h1>
+      </div>
+      <div className="right-logo">
+        <h1><em>FastBirita</em></h1>
+      </div>
     </div>
   );
 }
