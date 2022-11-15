@@ -1,63 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-header {
-  border: 1px solid black;
-  color: #fff;
-  font-family: 'Confortaa', cursive;
-  font-weight: 700;
-  padding: 10px;
+  font-family: "Comfortaa", cursive;
 }
 
 .nav-bar {
+  width: 100%;
+  top: 0;
+  position: absolute;
   align-items: center;
   display: flex;
-  font-family: 'Confortaa', cursive;
-  font-size: 30px;
   font-weight: 700;
-  justify-content: space-between;
-  margin: 0;
+  background: #040100f7;
+}
+
+.nav-bar-box-name > p {
+  background: red;
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  padding: 1.5rem 3rem;
+  margin: 0.5rem 0;
+  margin-left: 500px;
+  margin-top: 0;
 }
 
 .nav-bar-box {
-  align-items: center;
   display: flex;
-  font-family: 'Confortaa', cursive;
-  font-size: 30px;
   font-weight: 700;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0;
-}
-
-.nav-bar-box .products {
-  color: #fff;
-  font-family: 'Confortaa', cursive;
-  font-weight: 700;
-  margin: 0 10px;
-  padding: 10px;
-  text-decoration: none;
-}
-
-.nav-bar-box .orders {
-  color: #fff;
-  font-family: 'Confortaa', cursive;
-  font-weight: 700;
-  margin: 0 10px;
-  text-decoration: none;
 }
 
 /* LINK PRODUTOS */
 .nav-products {
+  font-size: 18pt;
   align-items: center;
   background: #574c40;
   color: #fff;
   display: flex;
-  font-family: 'Confortaa', cursive;
+  font-family: "Comfortaa", cursive;
   font-weight: 700;
   height: 7vh;
   justify-content: center;
@@ -65,12 +52,44 @@ header {
   width: 100%;
 }
 
+.nav-orders {
+  font-size: 18pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #8b8a8a;
+  color: #fff;
+  display: flex;
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+  height: 7vh;
+  justify-content: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 1em;
+}
+
+.nav-bar-box-name > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18pt;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  padding: 1em;
+}
+
 /* LINK MEUS PEDIDOS */
 
-.btn-link > button {
-  background: var(--btn-register-rover);
+.nav-bar-box-name > a > button {
+  background: rgb(70, 67, 59);
   border: none;
-  font-family: 'Comfortaa', cursive;
-  font-size: 1em;
-  padding: 0.5em;
+  font-size: 18pt;
+  font-weight: 700;
+  color: #fff;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  /* top: 0; */
 }

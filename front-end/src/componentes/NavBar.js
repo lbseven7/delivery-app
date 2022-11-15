@@ -28,8 +28,10 @@ function NavBar() {
           <p
             data-testid="customer_products__element-navbar-user-full-name"
           >
-            { userInfo.name }
+            {userInfo.name}
+            teste name
           </p>
+
           <Link
             to="/login"
             data-testid="customer_products__element-navbar-link-logout"
