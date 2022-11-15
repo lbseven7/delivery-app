@@ -8,68 +8,61 @@
 }
 
 .nav-bar {
-  width: 100%;
-  top: 0;
+  width: 1920px;
+  height: 105px;
   position: absolute;
-  align-items: center;
-  display: flex;
-  font-weight: 700;
-  background: #040100f7;
+  height: 105px;
+  left: 0%;
+  right: 0%;
+  top: 0.01px;
 }
 
 .nav-bar-box-name > p {
-  /* background: rgb(5, 5, 5); */
-  color: white;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
-  padding: 1.5rem 3rem;
-  margin: 0.5rem 0;
-  margin-left: 500px;
-  margin-top: 0;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  font-family: 'Comfortaa', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
-.nav-bar-box {
+/* .nav-bar-box {
   display: flex;
   font-weight: 700;
   justify-content: center;
   margin: 0;
-}
+} */
 
 /* LINK PRODUTOS */
 .nav-products {
-  font-size: 18pt;
-  align-items: center;
-  background: #574c40;
-  color: #fff;
-  display: flex;
-  font-family: "Comfortaa", cursive;
-  font-weight: 700;
-  height: 7vh;
-  justify-content: center;
-  text-decoration: none;
-  width: 100%;
+  width: 367px;
+  height: 105px;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: gray;
 }
 
 .nav-orders {
-  font-size: 18pt;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #8b8a8a;
-  color: #fff;
-  display: flex;
-  font-family: "Comfortaa", cursive;
-  font-weight: 700;
-  height: 7vh;
-  justify-content: center;
-  text-decoration: none;
-  width: 100%;
-  padding: 1em;
+  width: 1920px;
+  position: absolute;
+  height: 105px;
+  left: 0%;
+  right: 0%;
+  top: 0.01px;
+  background: green;
 }
 
-.nav-bar-box-name > a {
+/* .nav-bar-box-name > a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,18 +70,16 @@
   font-weight: 700;
   text-decoration: none;
   padding: 1.5em;
-}
+} */
 
 /* LINK MEUS PEDIDOS */
 
 .nav-bar-box-name > a > button {
-  background: rgb(70, 67, 59);
-  border: none;
-  font-size: 18pt;
-  font-weight: 700;
-  color: #fff;
-  padding: 1.1em;
+  width: 180px;
+  height: 104px;
   position: absolute;
-  right: 0;
-  top: 0;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
 }
