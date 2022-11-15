@@ -29,7 +29,6 @@ function NavBar() {
             data-testid="customer_products__element-navbar-user-full-name"
           >
             {userInfo.name}
-            teste name
           </p>
 
           <Link

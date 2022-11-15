@@ -107,12 +107,11 @@
 }
 
 .register-button {
-  background: #120b00;
+  background: #fbc903;
   border: none;
   border-radius: 0.5em;
   box-shadow: 0 0 15px 3px var(--box-shadow);
-  color: rgb(238, 210, 132);
-  /* color: var(--font-color); */
+  color:  #120b00;
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
@@ -125,7 +124,7 @@
   background: #fbc903;
   color: #120b00;
   transition: 0.5s;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 /* LOGIN END */

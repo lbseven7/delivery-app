@@ -18,7 +18,7 @@
 }
 
 .nav-bar-box-name > p {
-  background: red;
+  /* background: rgb(5, 5, 5); */
   color: white;
   position: absolute;
   left: 50%;
@@ -75,9 +75,8 @@
   align-items: center;
   font-size: 18pt;
   font-weight: 700;
-  color: #fff;
   text-decoration: none;
-  padding: 1em;
+  padding: 1.5em;
 }
 
 /* LINK MEUS PEDIDOS */
@@ -88,8 +87,8 @@
   font-size: 18pt;
   font-weight: 700;
   color: #fff;
-  padding: 1em;
+  padding: 1.1em;
   position: absolute;
   right: 0;
-  /* top: 0; */
+  top: 0;
 }
