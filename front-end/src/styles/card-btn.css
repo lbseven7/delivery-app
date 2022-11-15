@@ -1,0 +1,9 @@
+.card-btn {
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 18pt;
+font-weight: 700;
+text-decoration: none;
+padding: 1.1em;
+}

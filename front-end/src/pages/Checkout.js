@@ -40,7 +40,7 @@ function Checkout() {
   };
 
   return (
-    <section>
+    <section className="checkout">
       <NavBar />
       {
         cartCheckout.map((item, index) => (

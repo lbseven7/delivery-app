@@ -6,7 +6,7 @@ function CardButton() {
   const { total } = useContext(DeliveryContext);
 
   return (
-    <div>
+    <div className="card-btn">
       <Link to="/customer/checkout">
         <button
           type="button"

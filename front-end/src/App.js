@@ -4,6 +4,8 @@ import './App.css';
 import './styles/login.css';
 import './styles/cardProducts.css';
 import './styles/navBar.css';
+import './styles/checkout.css';
+import './styles/card-btn.css';
 import ContextProvider from './context/ContextProvider';
 import Login from './pages/Login';
 import Register from './pages/Register';
