@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Comfortaa', cursive;
 }
 /* 
 :root {
@@ -31,7 +32,6 @@
   margin-top: 2em;
   padding: 1em;
   color: #fff;
-  font-family: 'Comfortaa', cursive;
   font-size: 1.1em;
   font-weight: 700;
 }
@@ -56,7 +56,7 @@
 
 .card-products > label {
   color: var(--btn-login-hover);
-  font-family: 'Confortaa', cursive;
+  /* font-family: 'Confortaa', cursive; */
   font-weight: 700;
 }
 
@@ -66,7 +66,7 @@
   border-radius: 3px;
   color: white;
   cursor: pointer;
-  font-family: 'Confortaa', cursive;
+  /* font-family: 'Confortaa', cursive; */
   font-size: 1.2em;
   font-weight: 600;
   height: 2.6em;
