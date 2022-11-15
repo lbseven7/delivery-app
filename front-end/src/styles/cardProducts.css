@@ -6,7 +6,7 @@
   padding: 0;
   font-family: 'Comfortaa', cursive;
 }
-/* 
+
 :root {
   --primary-color: #040100d7;
   --secondary-color: rgb(225, 185, 7);
@@ -21,11 +21,11 @@
   --box-shadow: rgba(62, 58, 54, 0.604);
   --btn-register-bg: #91845760;
   --btn-plus-less: #f0c14ba7;
-} */
+}
 
 /* CARD START */
 .card-products {
-  background: rgba(83, 66, 48, 0.49);
+  background: rgba(255, 255, 255, 0.186);
   border-radius: 0.5em;
   display: inline-table;
   margin: 1rem;
@@ -49,25 +49,18 @@
   width: 7em;
 }
 
-.card-products-img:hover {
-  transform: scale(1.5);
-  transition: 0.5s;
-}
-
-.card-products > label {
+/* .card-products > label {
   color: var(--btn-login-hover);
-  /* font-family: 'Confortaa', cursive; */
   font-weight: 700;
-}
+} */
 
 .btn-less {
-  background: rgba(0, 0, 0, 0.524);
+  background: rgba(28, 18, 0, 0.403);
+  color: #090700;
   border: none;
   border-radius: 3px;
-  color: white;
   cursor: pointer;
-  /* font-family: 'Confortaa', cursive; */
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 600;
   height: 2.6em;
   margin-top: 1em;
@@ -75,28 +68,28 @@
 }
 
 .btn-less:hover {
-  background: var(--btn-plus-less);
-  color: black;
+  background: rgb(28, 14, 1);
+  color: #fbc903;
   transition: 0.5s;
 }
 
 
 .btn-plus {
-  background: rgba(0, 0, 0, 0.524);
+  background: rgb(28, 18, 0, 0.403);
+  color: #fbc903;
   border: none;
   border-radius: 3px;
-  color: white;
   cursor: pointer;
   font-family: 'Confortaa', cursive;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 600;
   height: 2.6em;
   width: 3.5em;
 }
 
 .btn-plus:hover {
-  background: var(--btn-plus-less);
-  color: black;
+  background: rgb(28, 14, 1);
+  color: #fbc903;
   transition: 0.5s;
 }
 
