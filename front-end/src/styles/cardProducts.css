@@ -49,11 +49,6 @@
   width: 7em;
 }
 
-/* .card-products > label {
-  color: var(--btn-login-hover);
-  font-weight: 700;
-} */
-
 .btn-less {
   background: rgba(28, 18, 0, 0.403);
   color: #090700;
@@ -94,10 +89,11 @@
 }
 
 .input-quantity {
-  background: rgba(189, 179, 167, 0.709);
+  background: rgba(255, 247, 237, 0.709);
   border: none;
-  height: 3.5em;
+  height: 1.7em;
   padding: 0.5em;
-  width: 4.5em;
+  width: 3em;
+  font-size: 1.5em;
 }
 /* CARD END */
