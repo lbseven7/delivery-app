@@ -76,7 +76,7 @@ function CardProducts({ product }) {
   }, [restoreQuantity]);
 
   return (
-    <span
+    <div
       key={ id }
       className="card-products"
     >
@@ -140,7 +140,7 @@ function CardProducts({ product }) {
           +
         </button>
       </label>
-    </span>
+    </div>
   );
 }
 

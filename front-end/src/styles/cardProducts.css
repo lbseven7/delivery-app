@@ -34,6 +34,8 @@
   color: #fff;
   font-size: 1.1em;
   font-weight: 700;
+  text-align: center;
+  width: 15%;
 }
 
 .card-products:hover {
@@ -41,25 +43,50 @@
   transition: 0.7s;
 }
 
-.card-products-img {
+.card-products-img > img {
   border-radius: 0.5em;
-  height: 7em;
   margin-bottom: 1em;
   margin-left: 1.5em;
   width: 7em;
+} 
+
+.card-products > p {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  font-size: 1em;
+  color: black;
 }
 
-.btn-less {
-  background: rgba(28, 18, 0, 0.403);
-  color: #090700;
+label > .btn-plus {
+  background: rgb(28, 18, 0, 0.403);
+  color: #fbc903;
   border: none;
-  border-radius: 3px;
   cursor: pointer;
+  border-bottom-right-radius: 0.7em;
+  border-top-right-radius: 0.7em;
   font-size: 1em;
-  font-weight: 600;
-  height: 2.6em;
+  font-weight: 700;
   margin-top: 1em;
-  width: 3.5em;
+  margin: 0;
+  padding: 0.5em;
+  width: 1.5em;
+}
+
+label > .btn-less {
+  background: rgba(28, 18, 0, 0.403);
+  color: #fbc903;
+  cursor: pointer;
+  border-top-left-radius: 0.7em;
+  border-bottom-left-radius: 0.7em;
+  border: none;
+  font-size: 1em;
+  font-weight: 700;
+  margin-top: 1em;
+  margin: 0;
+  padding: 0.5em;
+  width: 1.5em;
 }
 
 .btn-less:hover {
@@ -69,31 +96,19 @@
 }
 
 
-.btn-plus {
-  background: rgb(28, 18, 0, 0.403);
-  color: #fbc903;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  font-family: 'Confortaa', cursive;
-  font-size: 1em;
-  font-weight: 600;
-  height: 2.6em;
-  width: 3.5em;
-}
-
 .btn-plus:hover {
   background: rgb(28, 14, 1);
   color: #fbc903;
   transition: 0.5s;
 }
 
-.input-quantity {
+label > .input-quantity {
   background: rgba(255, 247, 237, 0.709);
+  text-align: center;
   border: none;
-  height: 1.7em;
-  padding: 0.5em;
-  width: 3em;
-  font-size: 1.5em;
+  /* border-radius: 0.5em; */
+  padding: 0.3em;
+  width: 2.5em;
+  font-size: 1.2em;
 }
 /* CARD END */

@@ -27,8 +27,8 @@
   line-height: 33px;
   letter-spacing: 0em;
   text-align: center;
-  /* background-color: #f5c400; */
-  color: #080808;
+  background-color: #b4b1a2;
+  color: #151100;
   position: absolute;
   left: 0%;
   right: 0%;
@@ -49,7 +49,7 @@
 
 .nav-link-orders {
   margin-left: 28vw;
-  color: #fcf3de;
+  color: #0f0b00;
   height: 105px;
   width: 367px;
   left: 0px;
@@ -69,15 +69,12 @@
   font-weight: 700;
   font-size: 28px;
   line-height: 33px;
-  /* display: flex; */
-  /* align-items: center;
-  text-align: center; */
   text-decoration: none;
 }
 
 .nav-link-orders:hover {
   color: #151100;
-  background: #ffaf01;
+  background: #b9871a;
   transition: 200ms;
 }
 
@@ -108,7 +105,7 @@
 .nav-bar-box-name > a > button {
   height: 104px;
   width: 180px;
-  background: #d6ccb2cb;
+  background: #352a1281;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -118,6 +115,6 @@
 }
 
 .nav-bar-box-name > a > button:hover {
-  background: #ffaf01;
+  background: #b9871a;
   transition: 200ms;
 }

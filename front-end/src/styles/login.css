@@ -33,22 +33,12 @@
 /*LOGIN START */
 .data-login-form-container {
   background: var(--bg-form-color);
-  /* border-radius: 10px; */
-  /* box-shadow: 0 0 15px 3px var(--box-shadow); */
-  /* padding: 3em; */
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/* .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} */
 
 .login-label {
   display: flex;

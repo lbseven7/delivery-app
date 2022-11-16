@@ -14,39 +14,10 @@ body {
   font-family: 'Comfortaa', cursive;
 }
 
-:root {
-  --primary-color: #040100d7;
-
-  --secondary-color: rgb(225, 185, 7);
-
-  --terciary-color: #f3f3f3;
-
-  --quaternary-color: #ddd;
-
-  --font-color: rgb(6, 3, 0);
-
-  --btn-register-rover: #f0c14b;
-
-  --bg-form-color: rgba(230, 216, 178, 0.418);
-
-  --bg-input-color: #fcf4d658;
-
-  --btn-color: rgb(251, 209, 164);
-
-  --btn-login-hover: #321900;
-
-  --box-shadow: rgba(62, 58, 54, 0.604);
-
-  --btn-register-bg: #91845760;
-}
-
 .App {
   align-items: center;
   display: flex;
-  /* flex-direction: column; */
-  height: 100vh;
   justify-content: center;
-  /* width: 100%; */
+  height: 100vh;
   font-family: 'Comfortaa', cursive;
-  font-weight: 700;
 }
