@@ -54,7 +54,7 @@ function Register() {
   return (
     <div className="data-register-form-container">
       <form>
-        <label className="resgister-label" htmlFor="email-input">
+        <label className="register-label" htmlFor="email-input">
           <h1>Cadastro</h1>
           <span>Nome</span>
           <input
