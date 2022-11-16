@@ -27,9 +27,9 @@
 .card-products {
   background: rgba(255, 255, 255, 0.186);
   border-radius: 0.5em;
-  display: inline-table;
+  display: inline-block;
+  flex-wrap: wrap;
   margin: 1rem;
-  margin-top: 2em;
   padding: 1em;
   color: #fff;
   font-size: 1.1em;
