@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Comfortaa", cursive;
-}
+} */
 
 .nav-bar {
   width: 1920px;
   height: 105px;
   position: absolute;
-  /* left: 0%; */
+  left: 0%;
   /* right: 0%; */
   top: 0.01px;
   background: #f1eeec4a;

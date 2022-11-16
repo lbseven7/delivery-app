@@ -26,7 +26,7 @@ function CheckoutProduct({
   };
 
   return (
-    <div>
+    <div className="checkout">
       <p
         data-testid={ `customer_checkout__element-order-table-item-number-${index}` }
       >
