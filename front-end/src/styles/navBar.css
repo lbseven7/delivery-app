@@ -11,75 +11,113 @@
   width: 1920px;
   height: 105px;
   position: absolute;
+  /* left: 0%; */
+  /* right: 0%; */
+  top: 0.01px;
+  background: #f1eeec4a;
+}
+
+.nav-link-products {
   height: 105px;
+  width: 367px;
+  left: 0px;
+  top: 0px;
+  /* border-radius: nullpx; */
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fcf3de;
+  position: absolute;
   left: 0%;
   right: 0%;
-  top: 0.01px;
+  top: 0%;
+  text-decoration: none;
+  font-family: "Comfortaa", cursive;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
+}
+
+.nav-link-products:hover {
+  color: #151100;
+  background: #ffaf01;
+  transition: 200ms;
+}
+
+.nav-link-orders {
+  margin-left: 28vw;
+  color: #fcf3de;
+  height: 105px;
+  width: 367px;
+  left: 0px;
+  top: 0px;
+  font-family: "Comfortaa", cursive;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: center;
+  position: absolute;
+  /* background-color: #f5c400; */
+  left: -8.9%;
+  right: 0%;
+  /* top: 0%; */
+  /* bottom: 0%; */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
+  /* display: flex; */
+  /* align-items: center;
+  text-align: center; */
+  text-decoration: none;
+}
+
+.nav-link-orders:hover {
+  color: #151100;
+  background: #ffaf01;
+  transition: 200ms;
 }
 
 .nav-bar-box-name > p {
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  font-family: 'Comfortaa', cursive;
-  font-style: normal;
+  height: 104.48588562011719px;
+  width: 359px;
+  font-family: "Comfortaa", cursive;
+  font-size: 24px;
   font-weight: 400;
-  font-size: 36px;
   line-height: 42px;
-  display: flex;
-  align-items: center;
+  letter-spacing: 0em;
   text-align: center;
-}
-
-/* .nav-bar-box {
-  display: flex;
-  font-weight: 700;
-  justify-content: center;
-  margin: 0;
-} */
-
-/* LINK PRODUTOS */
-.nav-products {
-  width: 367px;
-  height: 105px;
+  color: #fcf3de;
   position: absolute;
-  left: 0%;
   right: 0%;
   top: 0%;
-  bottom: 0%;
-  background: gray;
+  left: 67%;
+  font-weight: 400;
 }
 
-.nav-orders {
-  width: 1920px;
-  position: absolute;
-  height: 105px;
-  left: 0%;
-  right: 0%;
-  top: 0.01px;
-  background: green;
-}
-
-/* .nav-bar-box-name > a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18pt;
-  font-weight: 700;
+.nav-bar-box > a {
   text-decoration: none;
   padding: 1.5em;
-} */
-
-/* LINK MEUS PEDIDOS */
+  font-size: 1.5em;
+}
 
 .nav-bar-box-name > a > button {
-  width: 180px;
   height: 104px;
+  width: 180px;
+  background: #d6ccb2cb;
   position: absolute;
-  left: 0%;
   right: 0%;
   top: 0%;
-  bottom: 0%;
+  font-size: 1.7em;
+  font-weight: 800;
+  border: none;
+}
+
+.nav-bar-box-name > a > button:hover {
+  background: #ffaf01;
+  transition: 200ms;
 }
