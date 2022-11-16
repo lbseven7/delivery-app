@@ -9,16 +9,20 @@ function CardButton() {
     <div className="card-btn">
       <Link to="/customer/checkout">
         <button
+          className="btn-ver-carrinho"
           type="button"
           data-testid="customer_products__button-cart"
           disabled={ total === 0 }
         >
-          Ver Carrinho:
+          Ver Carrinho
         </button>
         <button
+          className="btn-total"
           type="submit"
           data-testid="customer_products__checkout-bottom-value"
         >
+          R$
+          {' '}
           { total.toFixed(2).replace('.', ',') }
         </button>
       </Link>

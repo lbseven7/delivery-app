@@ -1,9 +1,42 @@
 .card-btn {
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 18pt;
-font-weight: 700;
-text-decoration: none;
-padding: 1.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18pt;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 1.1em;
 }
+
+.card-btn a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card-btn .btn-ver-carrinho {
+  background-color: #130c01bf;
+  color: #f9c701;
+  border: red;
+  height: 79px;
+  width: 20vw;
+  left: 0px;
+  top: 0px;
+  font-size: 1.2em;
+  border: none; 
+  font-weight: 800;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-left: 60vw;
+}
+
+.card-btn .btn-total {
+  background-color: #130c01ee;
+  color: #f8e494;
+  height: 79px;
+  width: 5em;
+  border: none; 
+  font-size: 1.2em;
+  font-weight: 800;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+} 

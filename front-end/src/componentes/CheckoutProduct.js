@@ -26,7 +26,7 @@ function CheckoutProduct({
   };
 
   return (
-    <div className="checkout">
+    <div id="checkout">
       <p
         data-testid={ `customer_checkout__element-order-table-item-number-${index}` }
       >
@@ -54,6 +54,7 @@ function CheckoutProduct({
         {/* sub-total */}
       </p>
       <button
+        className="btn-remove"
         data-testid={ `customer_checkout__element-order-table-remove-${index}` }
         type="button"
         onClick={ () => removeItemCart() }
